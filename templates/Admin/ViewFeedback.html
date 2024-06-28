@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feedback view</title>
+</head>
+<body>
+    <header>
+        <h1>Student feedback</h1>
+    </header>
+    <div>
+       <form action="/tushionapp/ViewFeedback_post/" method="post">
+           {% csrf_token %}
+           <p>from-date</p>
+                <input type="date" name="fromdate"/>
+            <p>to-date</p>
+                <input type="date" name="todate"/>
+           <button type="submit">search</button>
+
+       </form>
+    </div>
+
+    <table border="2">
+        <tr>
+            <th>Sl no</th>
+            <th>Date</th>
+            <th>class</th>
+            <th>Student Name</th>
+            <th>Tutor</th>
+            <th>feedback</th>
+
+        </tr>
+       {% for i in data %}
+           <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.Date }}</td>
+               <td>{{ i.Student.Class.className }}</td>
+                <td>{{ i.Student.name }}</td>
+                <td>{{ i.Tutor.name }}</td>
+                <td>{{ i.feedback }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

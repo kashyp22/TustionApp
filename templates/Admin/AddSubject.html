@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/tushionapp/AddSubjects_post/" method="post">
+    {% csrf_token %}
+        <header>Add Subjects</header>
+
+        <h2>Class</h2>
+        <select name="cls">
+
+            {% for i in data %}
+            <option value="{{ i.id }}">{{ i.className }}</option>
+            {% endfor %}
+        </select>
+
+        <h2>Subjects</h2>
+        <input type="text" name="subject"/>
+        <button type="submit">add Subject</button>
+    </form>
+</body>
+</html>

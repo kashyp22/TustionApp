@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/tushionapp/StudentComplaint_post/" method="post">
+           {% csrf_token %}
+           <p>from-date</p>
+                <input type="date" name="fromdate"/>
+            <p>to-date</p>
+                <input type="date" name="todate"/>
+           <button type="submit">search</button>
+
+    </form>
+
+    <table border="2">
+
+            <tr>
+                <th>Sl no</th>
+                <th>Date</th>
+                <th>Student Name</th>
+                <th>Complaint</th>
+                <th>status</th>
+                <th>reply</th>
+
+            </tr>
+
+        {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.Date }}</td>
+                <td>{{ i.Student.name }}</td>
+                <td>{{ i.complaint }}</td>
+                <td>{{ i.status }}</td>
+
+                <td>{% if i.status == 'pending' %}<a href="/tushionapp/ReplyStudentComplaint/{{ i.id }}">reply</a>{% else %}{{ i.replay }}{% endif %}</td>
+    {#            <td><a>reject</a></td>#}
+            </tr>
+        {% endfor %}
+        </table>
+
+</body>
+</html>

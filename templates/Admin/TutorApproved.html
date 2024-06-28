@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Approved Tutors</h1>
+
+    <form action="/tushionapp/approveTutor_post/" method="post">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="tutorSearch" placeholder="Tutor Search"/>
+            <button type="submit">search</button>
+        </div>
+
+    </form>
+
+    <table border="2">
+
+        <tr>
+            <th>Sl no</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Qualification</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Experience</th>
+            <th>place</th>
+            <th>id proof</th>
+            <th>Reject</th>
+        </tr>
+        {% for i in data %}
+
+        <tr>
+            <td>{{ forloop.counter }}</td>
+          <td><img src={{ i.photo }}></td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.dob }}</td>
+            <td>{{ i.gender }}</td>
+            <td>{{ i.qualification }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.experience }}</td>
+            <td>{{ i.place }}</td>
+            <td><img src="{{ i.id_proof }}"></td>
+            <td><a href="/tushionapp/rejectTutor/{{ i.Login.id }}">Reject</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

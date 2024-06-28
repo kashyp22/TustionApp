@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>profile view</h1>
+
+ <form action="/tushionapp/EditProfile_post/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+ <input type="hidden" value="{{ data.Login_id }}" name="lid">
+
+       <p> Name</p>
+        <input type="text" name="name" value="{{ data.name }}"/>
+       <p> gender</p>
+        <input type="radio" name="gender" value="male" {% if data.gender == 'male' %}checked{% endif %}/> male
+        <input type="radio" name="gender" value="female" {% if data.gender == 'female' %}checked{% endif %}> female
+       <p> Qualification</p>
+        <input type="text" name="qulaification" value="{{ data.qualification }}"/>
+       <p> date-of-birth</p>
+        <input type="date" name="dob" value="{{ data.dob | date:'Y-m-d'}}"/>
+       <p> email</p>
+        <input type="email" name="email" value="{{ data.email }}"/>
+       <p> phone</p>
+        <input type="text" name="phone" value="{{ data.phone }}"/>
+       <p> experience</p>
+        <input type="text" name="experience" value="{{ data.experience }}"/>
+       <p> place</p>
+        <input type="text" name="place" value="{{ data.place }}"/>
+       <p> id_proof</p>
+             <img src="{{ data.id_proof }}" width="50px" height="50px">
+        <input type="file" name="idproof"/>
+       <p> photo</p>
+            <img src="{{ data.photo }}" width="50px" height="50px">
+        <input type="file" name="photo"/>
+
+        <p></p>
+                    <input type="submit" value="edit"/>
+
+    </form>
+
+
+
+
+</body>
+</html>

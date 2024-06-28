@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form action="/tushionapp/EditSubjects_post/" method="post">
+     {% csrf_token %}
+        <header>edit Subjects</header>
+
+        <h2>Class</h2>
+        <select name="cls">
+            {% for i in data %}
+            <option value="{{ i.id }}" {% if i.id == data2.Class_id %}selected{% endif %}>{{ i.className }}</option>
+            {% endfor %}
+        </select>
+
+        <h2>Subjects</h2>
+        <input type="hidden" name="sid" value="{{ data2.id }}"/>
+        <input type="text" name="subject" value="{{ data2.SubjectName }}"/>
+        <button type="submit">Edit Subject</button>
+    </form>
+
+
+</body>
+</html>

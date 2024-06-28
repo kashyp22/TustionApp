@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        Send Complaint Reply
+    </header>
+
+    <main>
+       <form action="/tushionapp/ReplyStudentComplaint_post/" method="post">
+           {% csrf_token %}
+           <div>
+                <input type="hidden" name="id" value="{{ id }}"/>
+                <input type="text" name="reply"/>
+            </div>
+        <div>
+            <button type="submit">Send Reply</button>
+        </div>
+       </form>
+    </main>
+
+
+</body>
+</html>

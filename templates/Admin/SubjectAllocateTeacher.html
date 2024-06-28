@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>allocate subject to teacher</h1>
+    <form action="/tushionapp/SubjectAllocate_post/" method="post">
+    {% csrf_token %}
+        <p>Subject</p>
+    <select name="subject">
+        {% for i in sub %}
+            <option value="{{ i.id }}">{{ i.SubjectName }}</option>
+        {% endfor %}
+    </select>
+    <p>Teacher</p>
+        <select name="tutor">
+            {% for i in tut %}
+                <option value="{{ i.id }}">{{ i.name }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">allocate</button>
+
+    </form>
+
+</body>
+</html>

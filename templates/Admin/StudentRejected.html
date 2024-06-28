@@ -1,0 +1,164 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#    <header>#}
+{#        <h1>Rejected Students</h1>#}
+{#    </header>#}
+{##}
+{#    <div>#}
+{#         <section>#}
+{#            <p>class</p>#}
+{#            <select name="class" id="class">#}
+{#                <option>8th</option>#}
+{#                <option>9th</option>#}
+{#                <option>10th</option>#}
+{#                <option>plus one</option>#}
+{#                <option>plus two</option>#}
+{#            </select>#}
+{#        </section>#}
+{#        <section>#}
+{#            <input type="text" placeholder="student name"/>#}
+{#            <button>Search</button>#}
+{#        </section>#}
+{##}
+{#    </div>#}
+{##}
+{#    <table border="2">#}
+{##}
+{#        <tr>#}
+{#            <th>Sl no</th>#}
+{#            <th>Photo</th>#}
+{#            <th>Name</th>#}
+{#            <th>DOB</th>#}
+{#            <th>Gender</th>#}
+{#            <th>Email</th>#}
+{#            <th>Phone</th>#}
+{#            <th>place</th>#}
+{#            <th>id proof</th>#}
+{#            <th>Class</th>#}
+{#            <th>Approve</th>#}
+{#            <th>Reject</th>#}
+{#        </tr>#}
+{#       {% for i in data %}#}
+{##}
+{#        <tr>#}
+{#            <td>{{ forloop.counter }}</td>#}
+{#            <td><img src={{ i.photo }}></td>#}
+{#            <td>{{ i.name }}</td>#}
+{#            <td>{{ i.dob }}</td>#}
+{#            <td>{{ i.gender }}</td>#}
+{#            <td>{{ i.email }}</td>#}
+{#            <td>{{ i.phone }}</td>#}
+{#            <td>{{ i.place }}</td>#}
+{#            <td><img src="{{ i.id_proof }}"></td>#}
+{#            <td>{{ i.Class.className }}</td>#}
+{#            <td><a href="/tushionapp/studentApprove/{{ i.Login.id }}">approve</a></td>#}
+{#            <td><a href="/tushionapp/studentReject/{{ i.Login.id }}">reject</a></td>#}
+{#        </tr>#}
+{#        {% endfor %}#}
+{##}
+{#    </table>#}
+{##}
+{##}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Rejected Students</h1>
+    </header>
+
+    <div>
+        <section>
+            <p>class</p>
+            <select name="class" id="class">
+            <option hidden="">select class</option>
+               {% for i in class %}
+                   <option value="{{ i.id }}">{{ i.className }}</option>
+                {% endfor %}
+            </select>
+        </section>
+    </div>
+
+    <table border="2" id="students-table">
+        <thead>
+            <tr>
+                <th>Sl no</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Place</th>
+                <th>Id proof</th>
+                <th>Class</th>
+{#                <th>Approve</th>#}
+                <th>Reject</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><img src="{{ i.photo }}" alt="Photo"></td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.dob }}</td>
+                <td>{{ i.gender }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.place }}</td>
+                <td><img src="{{ i.id_proof }}" alt="Id Proof"></td>
+                <td>{{ i.Class.className }}</td>
+                <td><a href="/tushionapp/studentApprove/{{ i.Login.id }}">Approve</a></td>
+{#                <td><a href="/tushionapp/studentReject/{{ i.Login.id }}">Reject</a></td>#}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('#class').change(function() {
+                var classId = $(this).val();
+                $.ajax({
+                    url: '/tushionapp/ajax/StudentReject_search/' + classId + '/',
+                    type: 'GET',
+                    success: function(data) {
+                        var tableBody = $('#students-table tbody');
+                        tableBody.empty();
+                        $.each(data, function(index, student) {
+                            var row = '<tr>' +
+                                '<td>' + (index + 1) + '</td>' +
+                                '<td><img src="' + student.photo + '" alt="Photo"></td>' +
+                                '<td>' + student.name + '</td>' +
+                                '<td>' + student.dob + '</td>' +
+                                '<td>' + student.gender + '</td>' +
+                                '<td>' + student.email + '</td>' +
+                                '<td>' + student.phone + '</td>' +
+                                '<td>' + student.place + '</td>' +
+                                '<td><img src="' + student.id_proof + '" alt="Id Proof"></td>' +
+                                '<td>' + student.Class__className + '</td>' +
+                                '<td><a href="/tushionapp/studentApprove/' + student.Login_id + '">Approve</a></td>' +
+{#                                '<td><a href="/tushionapp/studentReject/' + student.Login_id + '">Reject</a></td>' +#}
+                                '</tr>';
+                            tableBody.append(row);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

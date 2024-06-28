@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/tushionapp/AddTimeTable_post/" method="post">
+    {% csrf_token %}
+        <h1>Add Time Table</h1>
+
+        <div>
+            <p>Subject</p>
+
+            <select name="sid">
+                {% for i in data %}
+                    <option value="{{ i.id }}">{{ i.SubjectName }}</option>
+                {% endfor %}
+            </select>
+            <p>hour</p>
+                <input type="text" name="hour"/>
+            <p>day</p>
+                <input type="text" name="day"/>
+
+            <button type="submit">Add new time table</button>
+
+        </div>
+
+
+
+    </form>
+</body>
+</html>

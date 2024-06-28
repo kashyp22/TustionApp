@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form action="/tushionapp/ViewTimeTable_post/" method="post">
+     {% csrf_token %}
+    <input type="text" name="tsearch" placeholder="search day"/>
+    <button type="submit">search</button>
+        <header>View timetable</header>
+         <table border="1">
+             <tr>
+                 <th>sl no</th>
+                 <th>Subject</th>
+                 <th>day</th>
+                 <th>Hour</th>
+             </tr>
+
+             {% for i in data %}
+             <tr>
+                 <td>{{ forloop.counter }}</td>
+                 <td>{{ i.Subject.SubjectName}}</td>
+                 <td>{{ i.day }}</td>
+                 <td>{{ i.hour }}</td>
+                 <td><a href="/tushionapp/EditTimeTable/{{ i.id }}">Edit</a> </td>
+                 <td><a href="/tushionapp/DeleteTimeTable/{{ i.id }}">Delete</a> </td>
+             </tr>
+             {% endfor %}
+         </table>
+    </form>
+
+</body>
+</html>

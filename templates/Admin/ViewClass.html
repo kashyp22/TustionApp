@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form action="/tushionapp/ViewClass_post/" method="post">
+     {% csrf_token %}
+        <section>
+            <input type="text" name="clsearch"/>
+            <button type="submit">search</button>
+        </section>
+
+        <header>View Class</header>
+         <table border="2">
+             <tr>
+                 <th>sl no</th>
+                 <th>Class</th>
+                 <th></th>
+                 <th></th>
+             </tr>
+           {% for  i in data %}
+               <tr>
+                 <td>{{ forloop.counter }}</td>
+                 <td>{{ i.className }}</td>
+                 <td><a href="/tushionapp/EditClass/{{ i.id }}">Edit</a> </td>
+                 <td><a href="/tushionapp/deleteClass/{{ i.id }}">Delete</a> </td>
+               </tr>
+           {% endfor %}
+         </table>
+    </form>
+
+
+</body>
+</html>

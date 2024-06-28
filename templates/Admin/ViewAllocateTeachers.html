@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/tushionapp/ViewAllocateTeacher_post/" method="post">
+    {% csrf_token %}
+    <input type="text" name="search"/>
+    <button type="submit">search</button>
+</form>
+<h1>Teacher Allocated View</h1>
+    <table border="1">
+        <tr>
+            <th>sl no</th>
+            <th>Teacher</th>
+            <th>Subject</th>
+        </tr>
+        {% for i in data %}
+
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.Tutor.name }}</td>
+            <td>{{ i.Subject.SubjectName }}</td>
+            <td><a href="/tushionapp/EditAllocateTeacher/{{ i.id }}">Edit</a> </td>
+            <td><a href="/tushionapp/DeleteAllocateTeacher/{{ i.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

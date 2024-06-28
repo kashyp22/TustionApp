@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form action="/tushionapp/ViewSubjects_post/" method="post">
+     {% csrf_token %}
+        <input type="text" name="search" placeholder="search subject"/>
+        <button type="submit">search</button>
+        <header>View Subjects</header>
+         <table border="1">
+             <tr>
+                 <th>sl no</th>
+                 <th>Class</th>
+                 <th>Subject</th>
+             </tr>
+             {% for i in data %}
+                 <tr>
+                 <td>{{ forloop.counter }}</td>
+                 <td>{{ i.Class.className}}</td>
+                 <td>{{ i.SubjectName}}</td>
+                 <td><a href="/tushionapp/EditSubjects/{{ i.id }}">Edit</a> </td>
+                 <td><a href="/tushionapp/DeleteSubjects/{{ i.id }}">Delete</a> </td>
+             </tr>
+             {% endfor %}
+         </table>
+    </form>
+
+
+</body>
+</html>

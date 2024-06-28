@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <form action="/tushionapp/EditTimeTable_post/" method="post">
+    {% csrf_token %}
+        <h1>Edit Time Table</h1>
+
+        <div>
+            <p>Subject</p>
+            <select name="sid">
+                 {% for i in data1 %}
+             <option value="{{ i.id }}" {% if i.id == data1.Subject_id %}selected{% endif %}>{{ i.SubjectName }}</option>
+            {% endfor %}
+
+            </select>
+            <input type="hidden" name="tid" value="{{ data.id }}"/>
+            <p>hour</p>
+            <input type="text" name="hour" value="{{ data.hour }}"/>
+            <p>day</p>
+            <input type="text" name="day" value="{{ data.day }}"/>
+
+            <button type="submit">Edit</button>
+
+        </div>
+
+    </form>
+
+</body>
+</html>

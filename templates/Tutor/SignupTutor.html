@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Tutor signup</h1>
+
+    <form action="/tushionapp/SignupTutor_post/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       <p> Name</p> <input type="text" name="name"/>
+       <p> gender</p>
+        <input type="radio" name="gender" value="male"/> male
+        <input type="radio" name="gender" value="female"> female
+
+       <p> Qualification</p> <input type="text" name="qulaification"/>
+       <p> date-of-birth</p> <input type="date" name="dob"/>
+       <p> email</p> <input type="email" name="email"/>
+       <p> phone</p> <input type="text" name="phone"/>
+       <p> experience</p> <input type="text" name="experience"/>
+       <p> place</p> <input type="text" name="place"/>
+       <p> id_proof</p> <input type="file" name="idproof"/>
+       <p> photo</p> <input type="file" name="photo"/>
+       <p> password</p> <input type="password" name="password" required="true"/>
+       <p> confirm password</p> <input type="password" name="cpassword" required="true"/>
+
+        <p></p>
+                    <input type="submit" value="register"/>
+
+
+
+    </form>
+
+
+</body>
+</html>

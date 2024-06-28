@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header>
+    <h1>Students</h1>
+</header>
+
+<table border="1">
+    <tr>
+        <th>sl no</th>
+        <th>name</th>
+        <th>photo</th>
+        <th>gender</th>
+        <th>dob</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>place</th>
+        <th>class</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.photo }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.dob }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.phone }}</td>
+        <td>{{ i.place }}</td>
+        <td>{{ i.Class.className }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

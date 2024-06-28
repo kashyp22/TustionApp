@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <form action="/tushionapp/EditClass_post/" method="post">
+       {% csrf_token %}
+        <header>edit Class</header>
+
+
+        <h3> Class name </h3>
+       <input type="hidden" name="cid" value="{{ data.id }}"/>
+        <input type="text" name="class" value="{{ data.className }}"/>
+        <button type="submit" >Edit</button>
+    </form>
+
+
+</body>
+</html>
