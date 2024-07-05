@@ -5,6 +5,39 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>view results of the student </h1>
+
+     <form action="/tushionapp/ViewTestResult_post/" method="post">
+        {% csrf_token %}
+        <select name="cls">
+            {% for i in sub %}
+            <option value="{{ i.Class.ClassName }}">{{ i.Class.ClassName }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="sname" placeholder="student name">
+    <input type="submit" value="search">
+    </form>
+    <table border="2">
+        <tr>
+            <th>TestDetails</th>
+            <th>Student</th>
+            <th>Class</th>
+            <th>mark</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.TestDetails.Subject.SubjectName }}</td>
+            <td>{{ i.Student.name }}</td>
+            <td>{{ i.Student.Class.ClassName }}</td>
+            <td>{{ i.mark }}</td>
+            <td><a href="/tushionapp/EditTestResult/{{ i.id }}">Edit</a> </td>
+            <td><a href="/tushionapp/DeleteTestResult/{{ i.id }}">Delete</a> </td>
+        </tr>
+        {% endfor %}
+
+    </table>
 
 </body>
 </html>

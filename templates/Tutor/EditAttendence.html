@@ -6,5 +6,37 @@
 </head>
 <body>
 
+ <h1>edit Attendence</h1>
+    <form action="/tushionapp/EditAttendence_post/" method="post">
+        {% csrf_token %}
+    <input type="hidden" value="{{ data.id }}" name="aid">
+        <p>Student</p>
+
+      <select name="student1">
+        {% for i in student %}
+            <option value="{{ i.id }}" {% if i.id == data.Student_id %}selected{% endif %} >{{ i.name }}</option>
+{#            <option value="{{ i.id }}">{{ i.name }}</option>#}
+        {% endfor %}
+        </select>
+        <p>Class</p>
+        <select name="class">
+            {% for i in class %}
+                <option value="{{ i.id }}" {% if i.id == data.Class_id %}selected{% endif %}>{{ i.ClassName }}</option>
+{#            <option value="{{ i.id }}">{{ i.className }}</option>#}
+            {% endfor %}
+        </select>
+        <p>previous date</p>
+        <p>{{ data.Date }}</p>
+        <p>Edit date</p>
+        <input type="date" name="date">
+        <p>hour</p>
+        <input type="text" name="hour" value="{{ data.hour }}">
+        <p>present status</p>
+        <input type="text" name="pstatus" value="{{ data.pstatus }}">
+
+        <input type="submit" value="edit">
+    </form>
+
+
 </body>
 </html>

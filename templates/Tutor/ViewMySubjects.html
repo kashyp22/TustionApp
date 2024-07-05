@@ -6,16 +6,31 @@
 </head>
 <body>
 <h1>view your allocated subject</h1>
+
+    <form action="/tushionapp/ViewMySubject_post/" method="post">
+        {% csrf_token %}
+
+        <select name="class">
+            {% for i in cdata %}
+         <option value="{{ i.id }}">{{ i.ClassName }}</option>
+            {% endfor %}
+        </select>
+    <input type="submit" value="search">
+
+    </form>
+
     <table border="1">
         <tr>
             <th>Sl no</th>
             <th>Subject</th>
+            <th>Class</th>
             <th>Tutor</th>
         </tr>
         {% for i in data %}
         <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ i.Subject.SubjectName }}</td>
+            <td>{{ i.Subject.Class.ClassName }}</td>
             <td>{{ i.Tutor.name }}</td>
         </tr>
         {% endfor %}

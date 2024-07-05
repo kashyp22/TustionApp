@@ -6,9 +6,15 @@
 </head>
 <body>
 
-<header>
-    <h1>Students</h1>
-</header>
+    <header>
+        <h1>View Students</h1>
+    </header>
+
+    <form method="post" action="/tushionapp/ViewStudent_post/">
+        {% csrf_token %}
+            <input type="text" name="student" placeholder="student">
+            <input type="submit" value="search">
+    </form>
 
 <table border="1">
     <tr>
@@ -32,7 +38,7 @@
         <td>{{ i.email }}</td>
         <td>{{ i.phone }}</td>
         <td>{{ i.place }}</td>
-        <td>{{ i.Class.className }}</td>
+        <td>{{ i.Class.ClassName }}</td>
     </tr>
     {% endfor %}
 </table>

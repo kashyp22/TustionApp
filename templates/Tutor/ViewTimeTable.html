@@ -7,6 +7,19 @@
 <body>
 
     <h1>TimeTable</h1>
+
+    <form action="/tushionapp/ViewTimeTabel_post/" method="post">
+        {% csrf_token %}
+        <select name="day">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thusday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+        </select>
+        <input type="submit" value="search">
+    </form>
     <table border="1">
         <tr>
             <th>slno</th>
@@ -16,9 +29,10 @@
         </tr>
         {% for i in data %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.Subject.SubjectName }}</td>
+            <td>{{ i.hour }}</td>
+            <td>{{ i.day }}</td>
         </tr>
         {% endfor %}
     </table>

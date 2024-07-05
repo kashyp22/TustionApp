@@ -5,6 +5,35 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>View attendence</h1>
+    <table border="1">
+        <tr>
+            <th>Student</th>
+            <th>Class</th>
+            <th>Date</th>
+            <th>attendence</th>
+            <th>hours</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            <td>{{ i.Student.name }}</td>
+            <td>{{ i.Class.ClassName }}</td>
+            <td>{{ i.Date }}</td>
+            <td>{{ i.pstatus }}</td>
+            <td>{{ i.hour }}</td>
+            <td><a href="/tushionapp/EditAttendence/{{ i.id }}">edit</a> </td>
+            <td><a href="/tushionapp/deleteAttendence/{{ i.id }}">delete</a> </td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+
 
 </body>
 </html>

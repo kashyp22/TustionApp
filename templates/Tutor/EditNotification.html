@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Edit Notification</h1>
+
+    <form action="/tushionapp/EditNotification_post/" method="post">
+    {% csrf_token %}
+        <input type="hidden" name="eid" value="{{ data.id }}">
+        <select name="subject">
+{#            {% for i in data %}#}
+            <option value="{{ data.id }}">{{ data.mysubject.Subject.SubjectName }}</option>
+{#            {% endfor %}#}
+        </select>
+        <p></p>
+        <input type="text" name="message" value="{{ data.message }}">
+
+        <input type="submit" value="Send">
+    </form>
+
 
 </body>
 </html>

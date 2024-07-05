@@ -5,6 +5,28 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Result upload</h1>
+    <form action="/tushionapp/AddTestResult_post/" method="post">
+        {% csrf_token %}
+        <p>select Test</p>
+        <select name="testdetails">
+            {% for i in test %}
+            <option value="{{ i.id }} ">{{ i.Test_name }}</option>
+            {% endfor %}
+        </select>
+        <p>select Student</p>
+        <select name="student">
+            {% for i in student  %}
+            <option value="{{ i.id }}">{{ i.name }}</option>
+            {% endfor %}
+        </select>
+        <p>Add Mark</p>
+    <input type="number" name="mark">
+    <br>
+    <br>
+    <input type="submit" value="add mark">
+    </form>
+
 
 </body>
 </html>

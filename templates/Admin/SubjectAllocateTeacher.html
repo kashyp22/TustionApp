@@ -11,7 +11,7 @@
         <p>Subject</p>
     <select name="subject">
         {% for i in sub %}
-            <option value="{{ i.id }}">{{ i.SubjectName }}</option>
+            <option value="{{ i.id }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
         {% endfor %}
     </select>
     <p>Teacher</p>

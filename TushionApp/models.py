@@ -22,7 +22,7 @@ class Tutor(models.Model):
     status=models.CharField(max_length=100)
 
 class ClassStudy(models.Model):
-    className=models.CharField(max_length=50)
+    ClassName=models.CharField(max_length=50)
 
 class Student(models.Model):
     Login=models.ForeignKey(Login,on_delete=models.CASCADE) # fk
@@ -54,13 +54,18 @@ class Feedback(models.Model):
     feedback=models.CharField(max_length=100)
     Date=models.DateField(max_length=15)
 
+class Mysubject(models.Model):
+    Subject=models.ForeignKey(Subjects,on_delete=models.CASCADE) #fk
+    Tutor=models.ForeignKey(Tutor,on_delete=models.CASCADE) #fk
+
 class Timetable(models.Model):
     Subject=models.ForeignKey(Subjects,on_delete=models.CASCADE) #fk
     hour=models.CharField(max_length=10)
     day=models.CharField(max_length=20)
 
 class Notification(models.Model):
-    Tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)  # fk
+    Tutor = models.ForeignKey(Tutor,on_delete=models.CASCADE)  # fk
+    mysubject=models.ForeignKey(Mysubject,on_delete=models.CASCADE)
     Date=models.DateTimeField(max_length=50)
     Time=models.TimeField(max_length=10)
     message=models.CharField(max_length=100)
@@ -85,9 +90,6 @@ class Attendence(models.Model):
     pstatus=models.CharField(max_length=50)
     hour=models.CharField(max_length=50)
 
-class Mysubject(models.Model):
-    Subject=models.ForeignKey(Subjects,on_delete=models.CASCADE) #fk
-    Tutor=models.ForeignKey(Tutor,on_delete=models.CASCADE) #fk
 
 
 

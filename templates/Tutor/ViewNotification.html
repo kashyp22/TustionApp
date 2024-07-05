@@ -5,6 +5,39 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>View send notification</h1>
+
+    <form action="/tushionapp/ViewNotification_post/" method="post">
+        {% csrf_token %}
+        <p>from</p>
+        <input type="date" name="from">
+        <p>to</p>
+        <input type="date" name="to">
+        <input type="submit">
+    </form>
+    <table border="1">
+        <tr>
+            <th>Notification</th>
+{#            <th>Time</th>#}
+            <th>Subject</th>
+            <th>Class</th>
+             <th>Date and Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.message }}</td>
+{#            <td>{{ i.Time }}</td>#}
+            <td>{{ i.mysubject.Subject.SubjectName }}</td>
+            <td>{{ i.mysubject.Subject.Class.ClassName }}</td>
+            <td>{{ i.Date }}</td>
+            <td><a href="/tushionapp/EditNotification/{{ i.id }}">Edit</a> </td>
+            <td><a href="/tushionapp/DeleteNotification/{{ i.id }}">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+
 
 </body>
 </html>

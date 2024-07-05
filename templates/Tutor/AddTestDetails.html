@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Add test details</h1>
+    <form action="/tushionapp/AddTests_post/" method="post">
+    {% csrf_token %}
+    <input type="hidden" value="{{ id.id }}" name="tid">
+        <p>subject</p>
+        <select name="subject">
+            {% for i in data %}
+            <option value="{{ i.id }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
+            {% endfor %}
+        </select>
+        <p>test name</p>
+        <input type="text" placeholder="test name" name="tname" >
+        <p>Date</p>
+        <input type="date" name="date">
+        <p>from-time</p>
+        <input type="time" name="fromt">
+        <p>to-time</p>
+        <input type="time" name="totime">
+    <input type="submit">
+    </form>
 
 </body>
 </html>

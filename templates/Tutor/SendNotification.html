@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Send Notification</h1>
+
+    <form action="/tushionapp/SendNotification_post/" method="post">
+    {% csrf_token %}
+        <select name="subject">
+            {% for i in data %}
+            <option value="{{ i.id }}">{{ i.Subject.Class.ClassName }},{{ i.Subject.SubjectName }}</option>
+            {% endfor %}
+        </select>
+        <p></p>
+        <input type="text" name="message">
+
+        <input type="submit" value="Send">
+    </form>
 
 </body>
 </html>

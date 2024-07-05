@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+      <form action="/tushionapp/EditTest_post/" method="post">
+    {% csrf_token %}
+    <input type="text" value="{{ data.id }}" name="tid">
+        <p>subject</p>
+          <select name="subject">
+            {% for i in sub %}
+{#                <option value="{{ i.id }}"  >{{ i.SubjectName }}</option>#}
+                <option value="{{ i.id }}" {% if i.id == data.Subject_id %}selected{% endif %}>{{ i.SubjectName }}</option>
+            {% endfor %}
+          </select>
+        <p>test name</p>
+          <input type="text" value="{{ data.Test_name }}" name="tname" >
+        <p>Date</p>
+          <input type="date" name="date" value="{{ data.Date|date:"Y-m-d" }}">
+        <p>from-time</p>
+          <input type="time" name="fromt" value="{{ data.FromTime|time:"H:i" }}">
+        <p>to-time</p>
+          <input type="time" name="totime" value="{{ data.ToTime|time:"H:i" }}">
+          <input type="submit">
+    </form>
 
 </body>
 </html>
