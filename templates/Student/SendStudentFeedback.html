@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Send feedback to your teacher</h1>
+    <form action="/tushionapp/StudentFeedback_post/" method="post">
+        {% csrf_token %}
+
+        <select name="tutor">
+            {% for i in data %}
+            <option value="{{ i.Tutor_id }}">{{ i.Subject.Class.ClassName }},{{ i.Subject.SubjectName }},{{ i.Tutor.name }}</option>
+            {% endfor %}
+        </select>
+    <p>feedback</p>
+    <input type="text" name="feedback">
+    <input type="submit">
+
+    </form>
+
+
+</body>
+</html>

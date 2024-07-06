@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Test Details</h1>
+
+     <form action="/tushionapp/ViewStudentTest_post/" method="post">
+        {% csrf_token %}
+        <p>From</p>
+        <input type="date" name="fromdate">
+        <p>To</p>
+        <input type="date" name="to">
+        <p></p>
+        <input type="submit">
+    </form>
+    <table border="1">
+        <tr>
+            <th>Test Name</th>
+            <th>Date</th>
+            <th>From-Time</th>
+            <th>To-Time</th>
+            <th>subject</th>
+            <th>Class</th>
+            <th>Tutor</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.Test_name }}</td>
+            <td>{{ i.Date }}</td>
+            <td>{{ i.FromTime }}</td>
+            <td>{{ i.ToTime }}</td>
+            <td>{{ i.Subject.SubjectName }}</td>
+            <td>{{ i.Subject.Class.ClassName }}</td>
+            <td>{{ i.Tutor.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>View Subjects in your class</h1>
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Class</th>
+
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.SubjectName }}</td>
+            <td>{{ i.Class.ClassName }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

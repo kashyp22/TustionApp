@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>send your Complaint</h1>
+
+    <form action="/tushionapp/AddStudentComplaint_post/" method="post">
+        {% csrf_token %}
+        <textarea name="complaint"></textarea>
+        <p></p>
+        <input type="submit">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>View profile Student</h1>
+ <form action="/tushionapp/EditStudentProfile_post/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Name</p>
+        <input type="text" name="sname" value="{{ data.name }}">
+        <p>Dob</p>
+        <input type="date" name="dob" value="{{ data.dob|date:'Y-m-d'}}">
+        <p>gender</p>
+        <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "male" %}checked{% endif %}> male
+        <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "female" %}checked{% endif %} > female
+{#        <p>email</p>#}
+{#        <input type="email" name="email" value="{{ data.email }}">#}
+        <p>Phone</p>
+        <input type="number" name="phn" value="{{ data.phone }}">
+        <p>Place</p>
+        <input type="text" name="place" value="{{ data.place }}">
+        <p>Photo</p>
+        <img src="{{ data.photo }}" height="100px" width="100px">
+        <input type="file" name="phto">
+        <p>idproof</p>
+        <img src="{{ data.id_proof }}" height="100px" width="100px">
+        <input type="file" name="idprf">
+        <p>Class</p>
+        <select name="class">
+            {% for i in class %}
+            <option value="{{ i.id }}" {% if data.Class_id == i.id %}selected {% endif %}>{{ i.ClassName }}</option>
+            {% endfor %}
+        </select>
+{#        <p>password</p>#}
+{#        <input type="password" name="pswd">#}
+{#        <p>confirm password</p>#}
+{#        <input type="password" name="cpswd">#}
+        <p></p>
+        <input type="submit" value="edit">
+    </form>
+
+
+</body>
+</html>

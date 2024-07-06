@@ -15,14 +15,14 @@
        <p> Name</p>
         <input type="text" name="name" value="{{ data.name }}"/>
        <p> gender</p>
-        <input type="radio" name="gender" value="male" {% if data.gender == 'male' %}checked{% endif %}/> male
-        <input type="radio" name="gender" value="female" {% if data.gender == 'female' %}checked{% endif %}> female
+       <input type="radio" name="gender" value="male" {% if data.gender == 'male' %}checked{% endif %} /> male
+        <input type="radio" name="gender" value="female" {% if data.gender == 'female' %}checked{% endif %} /> female
        <p> Qualification</p>
         <input type="text" name="qulaification" value="{{ data.qualification }}"/>
        <p> date-of-birth</p>
         <input type="date" name="dob" value="{{ data.dob | date:'Y-m-d'}}"/>
-       <p> email</p>
-        <input type="email" name="email" value="{{ data.email }}"/>
+{#       <p> email</p>#}
+{#        <input type="email" name="email" value="{{ data.email }}"/>#}
        <p> phone</p>
         <input type="text" name="phone" value="{{ data.phone }}"/>
        <p> experience</p>

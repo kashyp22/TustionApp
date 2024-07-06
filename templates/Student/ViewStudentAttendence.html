@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>View attendence</h1>
+    <form action="/tushionapp/ViewStudentAttendence_post/" method="post">
+        {% csrf_token %}
+        <p>From</p>
+        <input type="date" name="fromdate">
+        <p>To</p>
+        <input type="date" name="to">
+        <p></p>
+        <input type="submit">
+    </form>
+
+
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Attendence</th>
+            <th>Hour</th>
+            <th>Class</th>
+            <th>Student</th>
+        </tr>
+        {% for i in data  %}
+        <tr>
+            <td>{{ i.Date }}</td>
+            <td>{{ i.pstatus }}</td>
+            <td>{{ i.hour }}</td>
+            <td>{{ i.Class.ClassName }}</td>
+            <td>{{ i.Student.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

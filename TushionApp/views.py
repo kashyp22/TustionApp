@@ -25,6 +25,8 @@ def login_post(req):
             return  HttpResponse('''<script> alert("Admin Login success "); window.location='/tushionapp/HomeAdmin/' </script>''')
         elif lg2.type == 'tutor':
             return  HttpResponse('''<script> alert("Tutor Login success "); window.location='/tushionapp/TutorHome/' </script>''')
+        elif lg2.type == 'student':
+            return HttpResponse("""<script>window.alert('Studen login success');window.location='/tushionapp/StudentHome/'</script>""")
         else:
             return HttpResponse('''<script>alert("not found"); window.location='/tushionapp/login/'</script>''')
     else:
@@ -408,7 +410,7 @@ def EditProfile_post(req):
     gender = req.POST['gender']
     q = req.POST['qulaification']
     dob1 = req.POST['dob']
-    eml = req.POST['email']
+    # eml = req.POST['email']
     phn = req.POST['phone']
     exp = req.POST['experience']
     plc = req.POST['place']
@@ -435,7 +437,7 @@ def EditProfile_post(req):
         r.save()
     r.name = name
     r.dob = dob1
-    r.email = eml
+    # r.email = eml
     r.place = plc
     r.gender = gender
     r.phone = phn
@@ -723,5 +725,239 @@ def Logout_tutor(req):
         #---------------------------------------------------------   STUDENT ------------------------------------------------------------
         #--------------------------------------------------------------------------------------------------------------------------------
 
+def StudentHome(req):
+    return render(req,'Student/StudentHome.html')
+
 def StudentSignup(req):
-    return render(req,'')
+    cls=ClassStudy.objects.all()
+    return render(req,'Student/StudentSignup.html',{"class":cls})
+
+def StudentSignup_post(req):
+    name = req.POST['sname']
+    gender = req.POST['gender']
+    # q = req.POST['qulaification']
+    dob1 = req.POST['dob']
+    pht = req.FILES['phto']
+    eml = req.POST['email']
+    phn = req.POST['phn']
+    cls = req.POST['class']
+    plc = req.POST['place']
+    idp = req.FILES['idprf']
+    pswd = req.POST['pswd']
+    cpswd = req.POST['cpswd']
+
+    if pswd == cpswd:
+        if Login.objects.filter(username=eml).exists():
+            return HttpResponse("""<script>alert("user already exits");window.location='/tushionapp/login/'</script>""")
+        else:
+            logindata = Login()
+            logindata.username = eml
+            logindata.password = pswd
+            logindata.type = 'pending'
+            logindata.save()
+
+            date = datetime.now().strftime('%Y%m%d-%H%M%S') + ".jpg"
+            fs = FileSystemStorage()
+            fs.save(date, pht)
+            photopath = fs.url(date)
+
+            date = datetime.now().strftime('%Y%m%d-%H%M%S') + ".jpg"
+            fs12 = FileSystemStorage()
+            fs12.save(date, idp)
+            idppath = fs12.url(date)
+
+            r = Student()
+            r.Login = logindata
+            r.name = name
+            r.dob = dob1
+            r.email = eml
+            r.place = plc
+            r.gender = gender
+            r.password = pswd
+            r.phone = phn
+            # r.qualification = q
+            r.Class_id = cls
+            r.id_proof = idppath
+            r.photo = photopath
+            r.LOGIN = logindata
+            r.status = 'pending'
+            r.save()
+            return HttpResponse("""<script>alert(" student signup successfull");window.location='/tushionapp/login/'</script>""")
+    else:
+        return HttpResponse("""<script>alert("password and confirm password not match ");window.location='/tushionapp/StudentSignup/'</script>""")
+
+def ViewStudentProfile(req):
+    data=Student.objects.get(Login_id=req.session['lid'])
+    cls = ClassStudy.objects.all()
+    return render(req,'Student/ViewStudentProfile.html',{"data":data,"class":cls})
+
+def ViewStudentProfile_post(req):
+    return render(req,'Student/ViewStudentProfile.html')
+
+def EditStudentProfile_post(req):
+    name = req.POST['sname']
+    gender = req.POST['gender']
+    # q = req.POST['qulaification']
+    dob1 = req.POST['dob']
+    phn = req.POST['phn']
+    cls = req.POST['class']
+    plc = req.POST['place']
+
+    r=Student.objects.get(Login_id=req.session['lid'])
+
+    if 'phto' in req.FILES:
+        pht = req.FILES['phto']
+
+        date = datetime.now().strftime('%Y%m%d-%H%M%S') + ".jpg"
+        fs = FileSystemStorage()
+        fs.save(date, pht)
+        photopath = fs.url(date)
+        r.photo = photopath
+        r.save()
+
+    if 'idprf' in req.FILES:
+        idp = req.FILES['idprf']
+
+        date = datetime.now().strftime('%Y%m%d-%H%M%S') + ".jpg"
+        fs12 = FileSystemStorage()
+        fs12.save(date, idp)
+        idppath = fs12.url(date)
+        r.id_proof = idppath
+        r.save()
+
+    r.name = name
+    r.dob = dob1
+    r.place = plc
+    r.gender = gender
+    # r.password = pswd
+    r.phone = phn
+    r.Class_id = cls
+    r.save()
+    # return HttpResponse("""<script>alert("edited");window.location='/tushionapp/ViewStudentProfile/'</sctipt>""")
+    return HttpResponse("""<script>alert(" student edited successfull");window.location='/tushionapp/StudentHome/'</script>""")
+
+def ViewStudentNotification(req):
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=Notification.objects.filter(mysubject__Subject__Class_id=cls_id)
+    print(data)
+    return render(req,'Student/ViewStudentNotification.html',{"data":data})
+
+def ViewStudentNotification_post(req):
+    frmdate=req.POST['fromdate']
+    todate=req.POST['to']
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=Notification.objects.filter(mysubject__Subject__Class_id=cls_id,Date__range=[frmdate,todate])
+    return render(req,'Student/ViewStudentNotification.html',{"data":data})
+
+def ViewStudentTest(req):
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=TestDetails.objects.filter(Subject__Class_id=cls_id)
+    return render(req,'Student/ViewStudentTestDetails.html',{"data":data})
+
+def ViewStudentTest_post(req):
+    frmdate = req.POST['fromdate']
+    todate = req.POST['to']
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=TestDetails.objects.filter(Subject__Class_id=cls_id,Date__range=[frmdate,todate])
+    return render(req,'Student/ViewStudentTestDetails.html',{"data":data})
+
+def ViewStudentAttendence(req):
+    id=Student.objects.get(Login_id=req.session['lid']).id
+    data=Attendence.objects.filter(Student_id=id)
+    return render(req,'Student/ViewStudentAttendence.html',{"data":data})
+
+def ViewStudentAttendence_post(req):
+    frmdate = req.POST['fromdate']
+    todate = req.POST['to']
+    id=Student.objects.get(Login_id=req.session['lid']).id
+    data=Attendence.objects.filter(Student_id=id,Date__range=[frmdate,todate])
+    return render(req,'Student/ViewStudentAttendence.html',{"data":data})
+
+def ViewStudentResult(req):
+    id = Student.objects.get(Login_id=req.session['lid']).id
+    data=Result.objects.filter(Student_id=id)
+    return render(req,'Student/ViewTestResult.html',{"data":data})
+
+def ViewStudentresult_post(req):
+    subject = req.POST['subject']
+    id = Student.objects.get(Login_id=req.session['lid']).id
+    data = Result.objects.filter(Student_id=id,TestDetails__Subject__SubjectName=subject)
+    return render(req,'Student/ViewTestResult.html',{"data":data})
+
+
+def ViewSubject(req):
+    cls_id = Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=Subjects.objects.filter(Class_id=cls_id)
+    return render(req,'Student/ViewStudentSubject.html',{"data":data})
+
+def ViewStudentTimeTable(req):
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=Timetable.objects.filter(Subject__Class_id=cls_id)
+    return render(req,'Student/ViewStudentTimetable.html',{"data":data})
+
+def ViewStudentTimeTable_post(req):
+    subject=req.POST['subject']
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=Timetable.objects.filter(Subject__Class_id=cls_id,Subject__SubjectName=subject)
+    return render(req,'Student/ViewStudentTimetable.html',{"data":data})
+
+def AddStudentComplaint(req):
+    return render(req,'Student/AddComplaint.html')
+
+def AddStudentComplaint_post(req):
+    complaint = req.POST['complaint']
+    id=Student.objects.get(Login_id=req.session['lid']).id
+    c=Complaints()
+    c.complaint=complaint
+    c.Student_id=id
+    c.Date=datetime.now().today()
+    c.replay='pending'
+    c.status='pending'
+    c.save()
+    return HttpResponse("""<script>alert("complaint send");window.location='/tushionapp/StudentHome/'</script>""")
+
+def ViewStudentreply(req):
+    id=Student.objects.get(Login_id=req.session['lid']).id
+    data=Complaints.objects.filter(Student_id=id)
+    return render(req,'Student/ViewReply.html',{"data":data})
+
+def StudentChangePassword(req):
+    return render(req,'Student/StudentChangepassword.html')
+
+def StudentChangePassword_post(req):
+    crnt = req.POST['Cpass']
+    new = req.POST['newpass']
+    cnfm = req.POST['cfrmpasswd']
+
+    check = Login.objects.filter(id=req.session['lid'], password=crnt)
+    if check.exists():
+        get = Login.objects.get(id=req.session['lid'], password=crnt)
+        if new == cnfm:
+            update = Login.objects.filter(id=req.session['lid']).update(password=cnfm)
+        else:
+            return HttpResponse("""<script>window.alert("newpassword and confirm password not equal");window.location='/tushionapp/StudentChangePassword/'</script>""")
+    else:
+        return HttpResponse("""<script>window.alert("no password found");window.location='/tushionapp/StudentChangePassword/'</script>""")
+
+    return HttpResponse("""<script>window.alert("password Changed");window.location='/tushionapp/StudentChangePassword/'</script>""")
+
+
+def StudentFeedback(req):
+    cls_id=Student.objects.get(Login_id=req.session['lid']).Class_id
+    data=Mysubject.objects.filter(Subject__Class_id=cls_id)
+    return render(req,'Student/SendStudentFeedback.html',{"data":data})
+
+def StudentFeedback_post(req):
+    tutor=req.POST['tutor']
+    fdbk=req.POST['feedback']
+    id=Student.objects.get(Login_id=req.session['lid']).id
+    f=Feedback()
+    f.Student_id=id
+    f.Tutor_id=tutor
+    f.feedback=fdbk
+    f.Date=datetime.now().today()
+    f.save()
+    return HttpResponse("""<script>alert("feedback Send");window.location='/tushionapp/StudentHome/'</script>""")
+def StudentLogout(req):
+    req.session['lid']=''
+    return render(req,'Login.html')
