@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
-    <h1>send your Complaint</h1>
-
+    <h1>Send your Complaint</h1>
+    <br>
+    <br>
     <form action="/tushionapp/AddStudentComplaint_post/" method="post">
         {% csrf_token %}
-        <textarea name="complaint"></textarea>
-        <p></p>
-        <input type="submit">
+        <textarea name="complaint" class="form-control"></textarea>
+        <br>
+        <input type="submit" class="btn btn-primary">
     </form>
 
 </body>
+{% endblock %}
 </html>

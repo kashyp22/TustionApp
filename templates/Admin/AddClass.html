@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
+<body>
+    <h1>Add Class</h1>
+    <br>
+    <br>
     <form action="/tushionapp/AddClass_post/" method="post">
         {% csrf_token %}
-        <header>Add Class</header>
-
-
-        <h3> Class name </h3>
-        <input type="text" name="class"/>
-        <button type="submit" >ADD</button>
+        <p> Class name </p>
+        <br>
+        <input type="text" name="class" class="form-control"/>
+        <br>
+        <button type="submit" class="btn btn-primary">ADD</button>
     </form>
 </body>
+{% endblock %}
 </html>

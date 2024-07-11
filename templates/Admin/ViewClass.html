@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
      <form action="/tushionapp/ViewClass_post/" method="post">
      {% csrf_token %}
@@ -33,4 +35,5 @@
 
 
 </body>
+{% endblock %}
 </html>

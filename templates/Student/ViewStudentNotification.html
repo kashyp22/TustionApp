@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
 
 <h1>View Notification</h1>
     <form action="/tushionapp/ViewStudentNotification_post/" method="post">
         {% csrf_token %}
-        <p>From</p>
-        <input type="date" name="fromdate">
-        <p>To</p>
-        <input type="date" name="to">
-        <p></p>
-        <input type="submit">
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                  <p>From</p>
+                <input type="date" name="fromdate" class="form-control">
+                <p>To</p>
+                <input type="date" name="to" class="form-control">
+                <br>
+                <input type="submit" class="btn btn-primary">
+            </div>
+        </div>
     </form>
 
-
-    <table border="1">
+    <br>
+    <br>
+    <table class="table table-bordered">
         <tr>
             <th>Date and time</th>
 {#            <th>Time</th>#}
@@ -41,4 +49,5 @@
 
     </table>
 </body>
+{% endblock %}
 </html>

@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
     <h1>View attendence</h1>
+    <br>
+    <br>
     <form action="/tushionapp/ViewStudentAttendence_post/" method="post">
         {% csrf_token %}
+
         <p>From</p>
-        <input type="date" name="fromdate">
+        <input type="date" name="fromdate" class="form-control">
+        <br>
         <p>To</p>
-        <input type="date" name="to">
-        <p></p>
-        <input type="submit">
+        <input type="date" name="to" class="form-control">
+        <br>
+        <input type="submit" class="btn btn-primary">
     </form>
+    <br>
 
-
-    <table border="1">
+    <table class="table table-bordered">
         <tr>
             <th>Date</th>
             <th>Attendence</th>
@@ -37,4 +43,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>

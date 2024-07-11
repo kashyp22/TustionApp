@@ -2,25 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba99b81-948b-4695-bce8-9060688fd602" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/AddComplaint.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/EditStudentProfile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/SendStudentFeedback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/StudentChangepassword.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/StudentHome.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewReply.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentNotification.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentProfile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentSubject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Student/ViewTestResult.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TushionApp/urls.py" afterPath="$PROJECT_DIR$/TushionApp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TushionApp/views.py" afterPath="$PROJECT_DIR$/TushionApp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Login.html" afterPath="$PROJECT_DIR$/templates/Login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/StudentSignup.html" afterPath="$PROJECT_DIR$/templates/Student/StudentSignup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/AddClass.html" afterPath="$PROJECT_DIR$/templates/Admin/AddClass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/AddSubject.html" afterPath="$PROJECT_DIR$/templates/Admin/AddSubject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/AddTimeTable.html" afterPath="$PROJECT_DIR$/templates/Admin/AddTimeTable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/StudentApproved.html" afterPath="$PROJECT_DIR$/templates/Admin/StudentApproved.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/StudentComplaintReply.html" afterPath="$PROJECT_DIR$/templates/Admin/StudentComplaintReply.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/StudentComplaints.html" afterPath="$PROJECT_DIR$/templates/Admin/StudentComplaints.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/StudentRejected.html" afterPath="$PROJECT_DIR$/templates/Admin/StudentRejected.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/StudentVerify.html" afterPath="$PROJECT_DIR$/templates/Admin/StudentVerify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/SubjectAllocateTeacher.html" afterPath="$PROJECT_DIR$/templates/Admin/SubjectAllocateTeacher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/TutorApproved.html" afterPath="$PROJECT_DIR$/templates/Admin/TutorApproved.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/TutorRejected.html" afterPath="$PROJECT_DIR$/templates/Admin/TutorRejected.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/ViewAllocateTeachers.html" afterPath="$PROJECT_DIR$/templates/Admin/ViewAllocateTeachers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/ViewClass.html" afterPath="$PROJECT_DIR$/templates/Admin/ViewClass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/ViewFeedback.html" afterPath="$PROJECT_DIR$/templates/Admin/ViewFeedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/ViewSubject.html" afterPath="$PROJECT_DIR$/templates/Admin/ViewSubject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/ViewTimeTable.html" afterPath="$PROJECT_DIR$/templates/Admin/ViewTimeTable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Admin/verifyTutor.html" afterPath="$PROJECT_DIR$/templates/Admin/verifyTutor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/AddComplaint.html" afterPath="$PROJECT_DIR$/templates/Student/AddComplaint.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/SendStudentFeedback.html" afterPath="$PROJECT_DIR$/templates/Student/SendStudentFeedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/StudentChangepassword.html" afterPath="$PROJECT_DIR$/templates/Student/StudentChangepassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewReply.html" afterPath="$PROJECT_DIR$/templates/Student/ViewReply.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewStudentNotification.html" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentNotification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewStudentProfile.html" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentProfile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewStudentSubject.html" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentSubject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html" afterPath="$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Student/ViewTestResult.html" afterPath="$PROJECT_DIR$/templates/Student/ViewTestResult.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/AddAttendence.html" afterPath="$PROJECT_DIR$/templates/Tutor/AddAttendence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/AddTestDetails.html" afterPath="$PROJECT_DIR$/templates/Tutor/AddTestDetails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/Changepassword.html" afterPath="$PROJECT_DIR$/templates/Tutor/Changepassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/EditNotification.html" afterPath="$PROJECT_DIR$/templates/Tutor/EditNotification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/SendNotification.html" afterPath="$PROJECT_DIR$/templates/Tutor/SendNotification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/UploadTestResult.html" afterPath="$PROJECT_DIR$/templates/Tutor/UploadTestResult.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewAttendence.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewAttendence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewFeedback.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewFeedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewMySubjects.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewMySubjects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewNotification.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewNotification.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewProfile.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewProfile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewStudent.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewStudent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewTestResult.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewTestResult.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewTests.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewTests.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Tutor/ViewTimeTable.html" afterPath="$PROJECT_DIR$/templates/Tutor/ViewTimeTable.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,104 +70,71 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5373737">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="ViewStudentTimetable.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html">
+          <file leaf-file-name="AdminIndex.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/Admin/AdminIndex.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+                <state relative-caret-position="210">
+                  <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ViewStudentSubject.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentSubject.html">
+          <file leaf-file-name="StudentComplaints.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/Admin/StudentComplaints.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+                <state relative-caret-position="588">
+                  <caret line="45" column="112" lean-forward="false" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ViewStudentNotification.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentNotification.html">
+          <file leaf-file-name="StudentComplaintReply.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/Admin/StudentComplaintReply.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="17" column="0" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="17" selection-end-column="0" />
+                <state relative-caret-position="378">
+                  <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="StudentHome.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/StudentHome.html">
+          <file leaf-file-name="ViewFeedback.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/Admin/ViewFeedback.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="309">
-                  <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+                <state relative-caret-position="273">
+                  <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ViewStudentTestDetails.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html">
+          <file leaf-file-name="pexels-pixabay-159711.jpg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/images/pexels-pixabay-159711.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="LoginIndex.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/LoginIndex.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+                <state relative-caret-position="273">
+                  <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ViewStudentAttendence.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="16" column="11" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="16" selection-end-column="11" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TushionApp/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="268">
-                  <caret line="949" column="30" lean-forward="true" selection-start-line="949" selection-start-column="30" selection-end-line="949" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SendStudentFeedback.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/SendStudentFeedback.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="StudentChangepassword.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/StudentChangepassword.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ViewTestResult.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/ViewTestResult.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="12" column="11" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="11" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -149,32 +143,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TushionApp/urls.py">
+        <leaf>
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TushionApp/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="439">
-                  <caret line="140" column="30" lean-forward="false" selection-start-line="140" selection-start-column="10" selection-end-line="140" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TushionClass/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TushionClass/settings.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21">
-                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                <state relative-caret-position="42">
+                  <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -183,28 +157,28 @@
           <file leaf-file-name="Login.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/Login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+                <state relative-caret-position="357">
+                  <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TushionApp/models.py">
+          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TushionApp/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="903">
-                  <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="16" />
+                <state relative-caret-position="1302">
+                  <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="StudentSignup.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Student/StudentSignup.html">
+          <file leaf-file-name="AdminHome.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/Admin/AdminHome.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="525">
-                  <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+                <state relative-caret-position="-588">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -224,7 +198,29 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>SubjectAllocate</find>
+      <find>link</find>
+      <find>sourceMappingURL</find>
+      <find>Tushionapp</find>
+      <find>TushionApp</find>
+      <find>/tushionapp/HomeAdmin/Static/tutee-starter/assets/css/style-starter.css</find>
+      <find>Static</find>
+      <find>assets</find>
+      <find>services.html</find>
+      <find>timetable</find>
+      <find>assets/</find>
+      <find>about</find>
+      <find>HomeAdmin</find>
+      <find>brows</find>
+      <find>block</find>
+      <find>webkit-</find>
+      <find>-webkit-appearance</find>
+      <find>approved</find>
     </findStrings>
+    <replaceStrings>
+      <replace>static/assets/</replace>
+      <replace>/static/assets/</replace>
+      <replace>static</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -232,57 +228,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/Admin/AdminHome.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/StudentVerify.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/StudentApproved.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/StudentRejected.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/EditSubjects.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/EditProfile.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/SignupTutor.html" />
-        <option value="$PROJECT_DIR$/TushionClass/settings.py" />
-        <option value="$PROJECT_DIR$/TushionClass/urls.py" />
-        <option value="$PROJECT_DIR$/templates/Tutor/EditTest.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/UploadTestResult.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/EditTestResult.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/EditNotification.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/Changepassword.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/ViewAllocateTeachers.html" />
-        <option value="$PROJECT_DIR$/TushionApp/models.py" />
         <option value="$PROJECT_DIR$/templates/Admin/AddSubject.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/SubjectAllocateTeacher.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/ViewMySubjects.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/ViewClass.html" />
+        <option value="$PROJECT_DIR$/TushionApp/static/assets/css/style-starter.css" />
         <option value="$PROJECT_DIR$/templates/Tutor/ViewStudent.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/ViewNotification.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/ViewTimeTable.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/SendNotification.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/ViewNotification.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/ViewSubject.html" />
-        <option value="$PROJECT_DIR$/templates/Admin/ViewClass.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/EditNotification.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/AddTestDetails.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/ViewTests.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/ViewTestResult.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/UploadTestResult.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/AddAttendence.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/ViewAttendence.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/EditAttendence.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/TutorHome.html" />
-        <option value="$PROJECT_DIR$/templates/Tutor/ViewFeedback.html" />
-        <option value="$PROJECT_DIR$/templates/Student/EditStudentProfile.html" />
-        <option value="$PROJECT_DIR$/templates/Login.html" />
-        <option value="$PROJECT_DIR$/templates/Student/StudentSignup.html" />
-        <option value="$PROJECT_DIR$/templates/Student/ViewStudentProfile.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/TutorIndex.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/Changepassword.html" />
         <option value="$PROJECT_DIR$/templates/Tutor/ViewProfile.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/ViewFeedback.html" />
+        <option value="$PROJECT_DIR$/templates/Tutor/ViewMySubjects.html" />
+        <option value="$PROJECT_DIR$/templates/Student/StudentIndex.html" />
+        <option value="$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html" />
+        <option value="$PROJECT_DIR$/templates/Student/ViewTestResult.html" />
+        <option value="$PROJECT_DIR$/templates/Student/ViewStudentNotification.html" />
+        <option value="$PROJECT_DIR$/templates/Student/ViewStudentProfile.html" />
+        <option value="$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html" />
+        <option value="$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html" />
         <option value="$PROJECT_DIR$/templates/Student/ViewStudentSubject.html" />
         <option value="$PROJECT_DIR$/templates/Student/AddComplaint.html" />
         <option value="$PROJECT_DIR$/templates/Student/ViewReply.html" />
-        <option value="$PROJECT_DIR$/templates/Student/ViewStudentNotification.html" />
-        <option value="$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html" />
-        <option value="$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html" />
-        <option value="$PROJECT_DIR$/templates/Student/ViewTestResult.html" />
-        <option value="$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html" />
-        <option value="$PROJECT_DIR$/templates/Student/StudentChangepassword.html" />
-        <option value="$PROJECT_DIR$/templates/Student/StudentHome.html" />
-        <option value="$PROJECT_DIR$/TushionApp/urls.py" />
         <option value="$PROJECT_DIR$/templates/Student/SendStudentFeedback.html" />
+        <option value="$PROJECT_DIR$/templates/Student/StudentChangepassword.html" />
+        <option value="$PROJECT_DIR$/TushionApp/urls.py" />
+        <option value="$PROJECT_DIR$/templates/Admin/StudentVerify.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/StudentApproved.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/StudentRejected.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/verifyTutor.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/TutorApproved.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/TutorRejected.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/SubjectAllocateTeacher.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/ViewAllocateTeachers.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/AddClass.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/ViewSubject.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/AddTimeTable.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/ViewTimeTable.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/AdminIndex.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/StudentComplaints.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/StudentComplaintReply.html" />
+        <option value="$PROJECT_DIR$/templates/Admin/ViewFeedback.html" />
         <option value="$PROJECT_DIR$/TushionApp/views.py" />
+        <option value="$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/LoginIndex.html" />
       </list>
     </option>
   </component>
@@ -315,26 +311,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="TushionClass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TushionClass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TushionClass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TushionClass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TushionClass" />
@@ -365,6 +349,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="TushionApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TushionClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TushionClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -383,28 +385,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TushionClass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TushionClass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -416,9 +402,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\TushionApp" />
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\TushionApp\static\snow-login-form-starter\images" />
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\TushionApp\static" />
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\static" />
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\templates\Admin" />
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\templates\Admin\Static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\Static" />
+      <recent name="C:\Users\kashy\PycharmProjects\TushionClass\TushionApp" />
       <recent name="C:\Users\kashy\PycharmProjects\TushionClass\templates" />
     </key>
   </component>
@@ -660,13 +652,13 @@
     <frame x="1" y="0" width="1918" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19652551" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18512486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25028968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37543452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -715,390 +707,406 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/Admin/AddClass.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/EditClass.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/EditSubjects.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/EditTimeTable.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/EditTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/EditTestResult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/UploadTestResult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/EditNotification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/Changepassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/SubjectAllocateTeacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewAllocateTeachers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewMySubjects.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewTimeTable.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="10" column="63" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewStudent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/AddSubject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="56" lean-forward="true" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Tutor/AddTestDetails.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/SendNotification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewClass.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewSubject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewNotification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewTests.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewTestResult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/AddAttendence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/EditAttendence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/TutorHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1113">
-          <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+        <state relative-caret-position="126">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewFeedback.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewFeedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewAttendence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/EditStudentProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/SignupTutor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TushionClass/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="281">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewProfile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Tutor/EditProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        <state relative-caret-position="63">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/StudentSignup.html">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/Changepassword.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="126">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TushionApp/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/TutorIndex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="365">
+          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TushionClass/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewTests.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="147">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/AddComplaint.html">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/TutorHome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="294">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/ViewReply.html">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewAttendence.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        <state relative-caret-position="302">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentSubject.html">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewTestResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="273">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentNotification.html">
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/UploadTestResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="575">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/ViewMySubjects.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="17" column="58" lean-forward="false" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Student/StudentIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7077">
+          <caret line="337" column="47" lean-forward="false" selection-start-line="337" selection-start-column="47" selection-end-line="337" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentTestDetails.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="294">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Student/ViewTestResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="357">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentNotification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <element signature="e#381#387#0#HTML" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentAttendence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentTimetable.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/StudentChangepassword.html">
+    <entry file="file://$PROJECT_DIR$/templates/Student/ViewStudentSubject.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="257">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Student/StudentHome.html">
+    <entry file="file://$PROJECT_DIR$/templates/Student/AddComplaint.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+        <state relative-caret-position="56">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TushionApp/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/Student/ViewReply.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="140" column="30" lean-forward="false" selection-start-line="140" selection-start-column="10" selection-end-line="140" selection-end-column="30" />
+        <state relative-caret-position="297">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Student/SendStudentFeedback.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="252">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Student/StudentChangepassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Tutor/AddAttendence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/StudentApproved.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="86" column="39" lean-forward="false" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/StudentRejected.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="89" column="53" lean-forward="false" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/StudentVerify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/verifyTutor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/TutorApproved.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/TutorRejected.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/SubjectAllocateTeacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewAllocateTeachers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewClass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/AddClass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TushionApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewSubject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/AddTimeTable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewTimeTable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/AdminHome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-588">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TushionApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1302">
+          <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/StudentComplaints.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="45" column="112" lean-forward="false" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/StudentComplaintReply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/images/bgimage.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TushionApp/static/snow-login-form-starter/images/pexels-pixabay-159711.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/ViewFeedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Admin/AdminIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TushionApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="949" column="30" lean-forward="true" selection-start-line="949" selection-start-column="30" selection-end-line="949" selection-end-column="30" />
+        <state relative-caret-position="42">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/LoginIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding />
         </state>
       </provider>

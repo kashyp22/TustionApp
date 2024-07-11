@@ -4,33 +4,66 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
     <h1>Add Attendence</h1>
+    <br>
+    <br>
     <form action="/tushionapp/AddAttendence_post/" method="post">
         {% csrf_token %}
-        <p>Student</p>
 
-      <select name="student1" value="">
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+           <p>Student</p>
+            <select name="student1" value="" class="form-control">
         {% for i in student %}
             <option value="{{ i.id }}">{{ i.name }}</option>
         {% endfor %}
         </select>
+        <br>
         <p>Class</p>
-        <select name="class">
+        <select name="class" class="form-control">
             {% for i in class %}
             <option value="{{ i.id }}">{{ i.ClassName }}</option>
             {% endfor %}
         </select>
+        <br>
         <p>date</p>
-        <input type="date" name="date">
+        <input type="date" name="date" class="form-control">
+        <br>
         <p>hour</p>
-        <input type="text" name="hour">
+        <input type="text" name="hour" class="form-control">
+        <br>
         <p>present status</p>
-        <input type="text" name="pstatus">
+        <input type="text" name="pstatus" class="form-control">
+        <br>
+        <input type="submit" value="ADD" class="btn btn-primary">
 
-        <input type="submit" value="ADD">
+        </div>
+    </div>
+
+
+{#      <select name="student1" value="">#}
+{#        {% for i in student %}#}
+{#            <option value="{{ i.id }}">{{ i.name }}</option>#}
+{#        {% endfor %}#}
+{#        </select>#}
+{#        <p>Class</p>#}
+{#        <select name="class">#}
+{#            {% for i in class %}#}
+{#            <option value="{{ i.id }}">{{ i.ClassName }}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+{#        <p>date</p>#}
+{#        <input type="date" name="date">#}
+{#        <p>hour</p>#}
+{#        <input type="text" name="hour">#}
+{#        <p>present status</p>#}
+{#        <input type="text" name="pstatus">#}
+{##}
+{#        <input type="submit" value="ADD">#}
     </form>
-
-
 </body>
+{% endblock %}
 </html>

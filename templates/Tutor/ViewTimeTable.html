@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
 
     <h1>TimeTable</h1>
-
-    <form action="/tushionapp/ViewTimeTabel_post/" method="post">
+    <br>
+    <br>
+    <form action="/tushionapp/ViewTimeTabel_post/#bodyname" method="post">
         {% csrf_token %}
-        <select name="day">
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thusday</option>
-            <option>Saturday</option>
-            <option>Sunday</option>
-        </select>
-        <input type="submit" value="search">
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <select name="day" class="form-control" id="inputPassword6" aria-describedby="passwordHelpInline" >
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thusday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+             </div>
+            <input type="submit" value="search" class="btn btn-primary">
+        </div>
+
     </form>
-    <table border="1">
+    <br>
+    <table class="table table-bordered">
         <tr>
             <th>slno</th>
             <th>subject</th>
@@ -38,4 +48,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>

@@ -4,43 +4,69 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
 <h1>View profile Student</h1>
+<br>
+<br>
  <form action="/tushionapp/EditStudentProfile_post/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
+
+
+    <div>
+        <div></div>
+    </div>
+
+        &nbsp;<p>Photo</p>
+        <img src="{{ data.photo }}" height="150px" width="150px" style="border-radius: 70px">
+        <input type="file" name="phto">
+        <br>
+        <br>
         <p>Name</p>
-        <input type="text" name="sname" value="{{ data.name }}">
+        <input type="text" name="sname" value="{{ data.name }}" class="form-control">
+        <br>
         <p>Dob</p>
-        <input type="date" name="dob" value="{{ data.dob|date:'Y-m-d'}}">
+        <input type="date" name="dob" value="{{ data.dob|date:'Y-m-d'}}" class="form-control">
+         <br>
         <p>gender</p>
-        <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "male" %}checked{% endif %}> male
-        <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "female" %}checked{% endif %} > female
+        <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "male" %}checked{% endif %}>  male
+        <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "female" %}checked{% endif %}> female
 {#        <p>email</p>#}
 {#        <input type="email" name="email" value="{{ data.email }}">#}
+        <br>
+        <br>
         <p>Phone</p>
-        <input type="number" name="phn" value="{{ data.phone }}">
+        <input type="number" name="phn" value="{{ data.phone }}" class="form-control">
+         <br>
         <p>Place</p>
-        <input type="text" name="place" value="{{ data.place }}">
-        <p>Photo</p>
-        <img src="{{ data.photo }}" height="100px" width="100px">
-        <input type="file" name="phto">
+        <input type="text" name="place" value="{{ data.place }}" class="form-control">
+      <br>
         <p>idproof</p>
         <img src="{{ data.id_proof }}" height="100px" width="100px">
         <input type="file" name="idprf">
+        <br>
+        <br>
         <p>Class</p>
-        <select name="class">
-            {% for i in class %}
-            <option value="{{ i.id }}" {% if data.Class_id == i.id %}selected {% endif %}>{{ i.ClassName }}</option>
-            {% endfor %}
-        </select>
+
+        <input value="{{ data.Class.ClassName }}" class="form-control">
+
+{#        <select name="class" class="form-control">#}
+{#            {% for i in class %}#}
+{#            <option value="{{ i.id }}" {% if data.Class_id == i.id %}selected {% endif %}>{{ i.ClassName }}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
 {#        <p>password</p>#}
 {#        <input type="password" name="pswd">#}
 {#        <p>confirm password</p>#}
 {#        <input type="password" name="cpswd">#}
-        <p></p>
-        <input type="submit" value="edit">
+        <br>
+        <br>
+        <input type="submit" value="edit" class="btn btn-primary">
     </form>
 
 
 </body>
-</html>
+
+{% endblock %}
+</html>0

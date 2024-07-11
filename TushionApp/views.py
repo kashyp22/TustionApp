@@ -10,7 +10,7 @@ from TushionApp.models import *
 
 
 def login(req):
-    return render(req,'Login.html')
+    return render(req,'LoginIndex.html')
 
 def login_post(req):
     username1=req.POST['username1']
@@ -34,7 +34,7 @@ def login_post(req):
 
 
 def HomeAdmin(req):
-    return render(req,'Admin/AdminHome.html')
+    return render(req,'Admin/AdminIndex.html')
 
 def verifyTutor(req):
     s=Tutor.objects.filter(status='pending')
@@ -78,10 +78,10 @@ def studentVerify(req):
 #--------------------- ajax
 
 def get_class_students(request, class_id):
-    # print(class_id)
+    print(class_id)
 
     students = Student.objects.filter(Class_id=class_id,status="pending").values(
-        'id', 'photo', 'name', 'dob', 'gender', 'email', 'phone', 'place', 'id_proof','Class__className','Login_id',
+        'id', 'photo', 'name', 'dob', 'gender', 'email', 'phone', 'place', 'id_proof','Class__ClassName','Login_id',
     )
     # print(students)
     return JsonResponse(list(students), safe=False)
@@ -103,11 +103,11 @@ def studentApproved(req):
     cla = ClassStudy.objects.all()
     return  render(req,'Admin/StudentApproved.html',{'data':a,"class":cla})
 
-def StudentApproved_search(request, class_id):
-    print(class_id)
+def StudentApproved_search(req,classId):
+    print(classId,"class")
 
-    students = Student.objects.filter(Class_id=class_id,status="approve").values(
-        'id', 'photo', 'name', 'dob', 'gender', 'email', 'phone', 'place', 'id_proof','Class__className','Login_id',
+    students = Student.objects.filter(Class_id=classId,status="approve").values(
+        'id', 'photo', 'name', 'dob', 'gender', 'email', 'phone', 'place', 'id_proof','Class__ClassName','Login_id',
     )
     # print(students)
     return JsonResponse(list(students), safe=False)
@@ -124,11 +124,11 @@ def studentRejected(req):
     cla = ClassStudy.objects.all()
     return render(req,'Admin/StudentRejected.html',{"data":a,"class":cla})
 
-def StudentReject_search(request, class_id):
+def StudentReject_search(request,class_id):
     print(class_id)
 
     students = Student.objects.filter(Class_id=class_id,status="reject").values(
-        'id', 'photo', 'name', 'dob', 'gender', 'email', 'phone', 'place', 'id_proof','Class__className','Login_id',
+        'id', 'photo', 'name', 'dob', 'gender', 'email', 'phone', 'place', 'id_proof','Class__ClassName','Login_id',
     )
     # print(students)
     return JsonResponse(list(students), safe=False)
@@ -334,7 +334,7 @@ def Logout(req):
 
 
 def TutorHome(req):
-    return render(req,'Tutor/TutorHome.html')
+    return render(req,'Tutor/TutorIndex.html')
 
 def TutorHome_post(req):
     return render(req,'Tutor/TutorHome.html')
@@ -505,6 +505,8 @@ def EditNotification_post(req):
     msg = req.POST['message']
     subject = req.POST['subject']
     eid=req.POST["eid"]
+    # print(eid,subject)
+
     res=Notification.objects.get(id=eid)
     res.Date = datetime.now().today()
     res.Time = datetime.now().strftime('%H:%M')
@@ -726,7 +728,7 @@ def Logout_tutor(req):
         #--------------------------------------------------------------------------------------------------------------------------------
 
 def StudentHome(req):
-    return render(req,'Student/StudentHome.html')
+    return render(req,'Student/StudentIndex.html')
 
 def StudentSignup(req):
     cls=ClassStudy.objects.all()

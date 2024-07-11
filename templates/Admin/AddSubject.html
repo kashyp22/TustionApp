@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
 
     <form action="/tushionapp/AddSubjects_post/" method="post">
@@ -23,4 +25,5 @@
         <button type="submit">add Subject</button>
     </form>
 </body>
+{% endblock %}
 </html>

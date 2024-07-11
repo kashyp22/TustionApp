@@ -66,29 +66,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Approved Students</h1>
     </header>
-
+    <br>
+    <br>
     <div>
         <section>
-            <p>class</p>
-            <select name="class" id="class">
-            <option hidden="">select class</option>
+
+            <select name="class" id="class" class="form-control">
+            <option>Select And Search Class</option>
                {% for i in class %}
-                   <option value="{{ i.id }}">{{ i.className }}</option>
+                   <option value="{{ i.id }}">{{ i.ClassName }}</option>
                 {% endfor %}
             </select>
         </section>
     </div>
-
-    <table border="2" id="students-table">
+    <br>
+    <br>
+    <table class="table table-bordered" id="students-table">
         <thead>
             <tr>
                 <th>Sl no</th>
@@ -117,7 +122,7 @@
                 <td>{{ i.phone }}</td>
                 <td>{{ i.place }}</td>
                 <td><img src="{{ i.id_proof }}" alt="Id Proof"></td>
-                <td>{{ i.Class.className }}</td>
+                <td>{{ i.Class.ClassName }}</td>
 {#                <td><a href="/tushionapp/studentApprove/{{ i.Login.id }}">Approve</a></td>#}
                 <td><a href="/tushionapp/studentReject/{{ i.Login.id }}">Reject</a></td>
             </tr>
@@ -129,6 +134,7 @@
         $(document).ready(function() {
             $('#class').change(function() {
                 var classId = $(this).val();
+                console.log(classId,"xcvbnm")
                 $.ajax({
                     url: '/tushionapp/ajax/StudentApproved_search/' + classId + '/',
                     type: 'GET',
@@ -146,7 +152,7 @@
                                 '<td>' + student.phone + '</td>' +
                                 '<td>' + student.place + '</td>' +
                                 '<td><img src="' + student.id_proof + '" alt="Id Proof"></td>' +
-                                '<td>' + student.Class__className + '</td>' +
+                                '<td>' + student.Class__ClassName + '</td>' +
 {#                                '<td><a href="/tushionapp/studentApprove/' + student.Login_id + '">Approve</a></td>' +#}
                                 '<td><a href="/tushionapp/studentReject/' + student.Login_id + '">Reject</a></td>' +
                                 '</tr>';
@@ -158,4 +164,5 @@
         });
     </script>
 </body>
+{% endblock %}
 </html>

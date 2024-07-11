@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
 
     <header>
         <h1>View Students</h1>
     </header>
 
-    <form method="post" action="/tushionapp/ViewStudent_post/">
+    <form method="post" action="/tushionapp/ViewStudent_post/#bodyname">
         {% csrf_token %}
-            <input type="text" name="student" placeholder="student">
-            <input type="submit" value="search">
+        <table class="pull-left">
+{#            <input type="text" name="student" placeholder="student" class="form-control">#}
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <input type="text" name="student" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        <input type="submit" value="search" class="btn btn-primary" >
+                    </span>
+                </div>
+            </div>
+
+        </table>
     </form>
 
-<table border="1">
+<table class="table table-bordered">
     <tr>
         <th>sl no</th>
         <th>name</th>
@@ -32,7 +47,7 @@
     <tr>
         <td>{{ forloop.counter }}</td>
         <td>{{ i.name }}</td>
-        <td>{{ i.photo }}</td>
+        <td> <img src="{{ i.photo }}" width="150" height="100" alt=" image not found"></td>
         <td>{{ i.gender }}</td>
         <td>{{ i.dob }}</td>
         <td>{{ i.email }}</td>
@@ -44,4 +59,5 @@
 </table>
 
 </body>
+{% endblock %}
 </html>

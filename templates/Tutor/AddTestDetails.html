@@ -4,27 +4,65 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
-<h1>Add test details</h1>
+    <h1>Add test details</h1>
+    <br>
+    <br>
     <form action="/tushionapp/AddTests_post/" method="post">
     {% csrf_token %}
+
     <input type="hidden" value="{{ id.id }}" name="tid">
-        <p>subject</p>
-        <select name="subject">
-            {% for i in data %}
-            <option value="{{ i.id }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
-            {% endfor %}
-        </select>
-        <p>test name</p>
-        <input type="text" placeholder="test name" name="tname" >
-        <p>Date</p>
-        <input type="date" name="date">
-        <p>from-time</p>
-        <input type="time" name="fromt">
-        <p>to-time</p>
-        <input type="time" name="totime">
-    <input type="submit">
+
+  <div class="row g-3 align-items-center">
+         <div class="col-auto">
+             <label for="exampleFormControlTextarea1" class="form-label">Subject</label>
+             <select name="subject" class="form-control" id="inputPassword6" aria-describedby="passwordHelpInline" >
+                {% for i in data %}
+                    <option value="{{ i.id }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
+                {% endfor %}
+            </select>
+         </div>
+  </div>
+<br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="exampleFormControlTextarea1" class="form-label">Test Name</label>
+            <input type="text" name="tname"  class="form-control">
+        </div>
+    </div>
+    <br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="exampleFormControlTextarea1" class="form-label">Date</label>
+            <input type="date" name="date" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+    </div>
+    <br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="exampleFormControlTextarea1" class="form-label">From Time</label>
+            <input type="time" name="fromt" class="form-control">
+        </div>
+    </div>
+    <br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="exampleFormControlTextarea1" class="form-label">To time</label>
+            <input type="time" name="totime"  class="form-control" >
+        </div>
+    </div>
+    <br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <input type="Submit" class=" btn btn-primary" value="submit" >
+        </div>
+    </div>
+{#        <p>subject</p>#}
+
     </form>
 
 </body>
+{% endblock %}
 </html>

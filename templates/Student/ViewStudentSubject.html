@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
 <h1>View Subjects in your class</h1>
-    <table border="1">
+    <br>
+    <br>
+    <table class="table table-bordered">
         <tr>
             <th>Subject</th>
             <th>Class</th>
@@ -21,4 +26,5 @@
 
     </table>
 </body>
+{% endblock %}
 </html>

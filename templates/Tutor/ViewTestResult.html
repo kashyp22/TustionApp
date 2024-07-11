@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body  %}
 <body>
     <h1>view results of the student </h1>
-
+<br>
+    <br>
      <form action="/tushionapp/ViewTestResult_post/" method="post">
         {% csrf_token %}
-        <select name="cls">
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <select name="cls" class="form-control">
             {% for i in sub %}
             <option value="{{ i.Class.ClassName }}">{{ i.Class.ClassName }}</option>
             {% endfor %}
         </select>
-        <input type="text" name="sname" placeholder="student name">
-    <input type="submit" value="search">
+
+      </div>
+    <div class="col-auto">
+        <input type="text" name="sname" placeholder="student name" class="form-control">
+    </div>
+     <input type="submit" value="search" class="btn btn-primary">
+    </div>
     </form>
-    <table border="2">
+    <br>
+    <table class=" table table-bordered">
         <tr>
             <th>TestDetails</th>
             <th>Student</th>
@@ -40,4 +51,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>

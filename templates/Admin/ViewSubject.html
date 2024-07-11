@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
      <form action="/tushionapp/ViewSubjects_post/" method="post">
      {% csrf_token %}
-        <input type="text" name="search" placeholder="search subject"/>
-        <button type="submit">search</button>
-        <header>View Subjects</header>
-         <table border="1">
+        <input type="text" name="search" placeholder="search subject" class="form-control"/>
+     <br>
+        <button type="submit" class="btn btn-primary">search</button>
+     <br>
+     <br>
+
+         <h3>View Subjects</h3>
+     <br>
+     <br>
+         <table class="table table-bordered">
              <tr>
                  <th>sl no</th>
                  <th>Class</th>
@@ -28,6 +36,6 @@
          </table>
     </form>
 
-
 </body>
+{% endblock %}
 </html>

@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
     <h1>Edit Notification</h1>
 
+    <br>
+    <br>
     <form action="/tushionapp/EditNotification_post/" method="post">
     {% csrf_token %}
-        <input type="hidden" name="eid" value="{{ data.id }}">
-        <select name="subject">
-{#            {% for i in data %}#}
-            <option value="{{ data.id }}">{{ data.mysubject.Subject.SubjectName }}</option>
-{#            {% endfor %}#}
-        </select>
-        <p></p>
-        <input type="text" name="message" value="{{ data.message }}">
 
-        <input type="submit" value="Send">
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+
+                <input type="hidden" name="eid" value="{{ data.id }}">
+                <select name="subject" class="form-control" id="inputPassword6" aria-describedby="passwordHelpInline" >
+
+                    <option value="{{ data.mysubject.Subject.id }}">{{ data.mysubject.Subject.SubjectName }}</option>
+
+                </select>
+             </div>
+        </div>
+
+       <br>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Edit your Notification</label>
+            <textarea type="text" name="message" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ data.message }}</textarea>
+        </div>
+
+        <input type="submit" value="Send" class="btn btn-primary">
     </form>
 
 
 </body>
+{% endblock %}
 </html>

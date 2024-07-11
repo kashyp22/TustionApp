@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
+    <div>
+        <form action="/tushionapp/StudentComplaint_post/" method="post">
+               {% csrf_token %}
+               <p>from-date</p>
+                    <input type="date" name="fromdate" class="form-control"/>
+            <br>
+                <p>to-date</p>
+                    <input type="date" name="todate" class="form-control"/>
+            <br>
+               <button type="submit" class="btn btn-primary">search</button>
 
-    <form action="/tushionapp/StudentComplaint_post/" method="post">
-           {% csrf_token %}
-           <p>from-date</p>
-                <input type="date" name="fromdate"/>
-            <p>to-date</p>
-                <input type="date" name="todate"/>
-           <button type="submit">search</button>
-
-    </form>
-
-    <table border="2">
+        </form>
+    </div>
+<br>
+<br>
+    <table class="table table-bordered">
 
             <tr>
                 <th>Sl no</th>
@@ -37,11 +43,12 @@
                 <td>{{ i.complaint }}</td>
                 <td>{{ i.status }}</td>
 
-                <td>{% if i.status == 'pending' %}<a href="/tushionapp/ReplyStudentComplaint/{{ i.id }}">reply</a>{% else %}{{ i.replay }}{% endif %}</td>
+                <td>{% if i.status == 'pending' %}<a href="/tushionapp/ReplyStudentComplaint/{{ i.id }}#bodyname">reply</a>{% else %}{{ i.replay }}{% endif %}</td>
     {#            <td><a>reject</a></td>#}
             </tr>
         {% endfor %}
         </table>
 
 </body>
+{% endblock %}
 </html>

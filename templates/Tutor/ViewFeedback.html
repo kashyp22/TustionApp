@@ -4,20 +4,39 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
     <h1>view feedback</h1>
+    <br>
+    <br>
+
 
     <form action="/tushionapp/ViewFeedbackTutor_post/" method="post">
-           {% csrf_token %}
-           <p>from-date</p>
-                <input type="date" name="fromdate"/>
-            <p>to-date</p>
-                <input type="date" name="todate"/>
-           <button type="submit">search</button>
+
+        {% csrf_token %}
+
+         <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                 <p>from-date</p>
+                    <input type="date" name="fromdate" class="form-control"/>
+                <br>
+                <p>to-date</p>
+                    <input type="date" name="todate" class="form-control"/>
+                <br>
+                <button type="submit" class="btn btn-primary">search</button>
+            </div>
+        </div>
+{#           <p>from-date</p>#}
+{#                <input type="date" name="fromdate"/>#}
+{#            <p>to-date</p>#}
+{#                <input type="date" name="todate"/>#}
+{#           <button type="submit">search</button>#}
 
        </form>
-
-    <table border="1">
+    <br>
+    <br>
+    <table class="table table-bordered">
     <tr>
         <th>Date</th>
         <th>Student</th>
@@ -35,4 +54,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>

@@ -4,35 +4,56 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
     <h1>Test Result </h1>
+    <br>
+    <br>
      <form action="/tushionapp/ViewStudentresult_post/" method="post">
         {% csrf_token %}
-        <input type="text" name="subject">
-        <input type="submit">
+
+
+{#    <p>Subject</p>#}
+         <div class="row g-3 align-items-center">
+             <div class="col-auto">
+                 <input type="text" name="subject" class="form-control" placeholder="Subject">
+             </div>
+             <div class="col-auto">
+{#                 <input type="text" name="subject" class="form-control">#}
+                  <input type="submit" class="btn btn-primary" value="Search">
+             </div>
+         </div>
     </form>
+    <br>
+    <br>
 
-<table border="1">
-    <tr>
-        <th>TestName</th>
-        <th>Subject</th>
-        <th>Class</th>
-        <th>Student</th>
-        <th>Tutor</th>
-        <th>Mark</th>
-    </tr>
-    {% for i in data %}
-    <tr>
-        <td>{{ i.TestDetails.Test_name }}</td>
-        <td>{{ i.TestDetails.Subject.SubjectName }}</td>
-        <td>{{ i.TestDetails.Subject.Class.ClassName }}</td>
-        <td>{{ i.Student.name }}</td>
-        <td>{{ i.TestDetails.Tutor.name }}</td>
-        <td>{{ i.mark }}</td>
-    </tr>
-    {% endfor %}
 
-</table>
+
+
+    <table class="table table-bordered ">
+        <tr>
+            <th>TestName</th>
+            <th>Subject</th>
+            <th>Class</th>
+            <th>Student</th>
+            <th>Tutor</th>
+            <th>Mark</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.TestDetails.Test_name }}</td>
+            <td>{{ i.TestDetails.Subject.SubjectName }}</td>
+            <td>{{ i.TestDetails.Subject.Class.ClassName }}</td>
+            <td>{{ i.Student.name }}</td>
+            <td>{{ i.TestDetails.Tutor.name }}</td>
+            <td>{{ i.mark }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
 
 </body>
+{% endblock %}
+
 </html>

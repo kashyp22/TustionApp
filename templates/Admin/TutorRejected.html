@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
     <h1>Rejected Tutors</h1>
-
+        <br>
+        <br>
        <form action="/tushionapp/rejectedTutor_post/" method="post">
            {% csrf_token %}
-            <div>
-            <input type="text" name="tutorSearch" placeholder="tutor search"/>
-            <button type="submit">search</button>
-        </div>
+           <div>
+                <input type="text" name="tutorSearch" placeholder="tutor search" class="form-control"/>
+               <br>
+                <button type="submit" class="btn btn-primary">search</button>
+           </div>
        </form>
-
-    <table border="2">
+    <br>
+    <br>
+    <table class="table table-bordered">
 
         <tr>
             <th>Sl no</th>
@@ -53,4 +58,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>

@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <title>feedback view</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
     <header>
         <h1>Student feedback</h1>
     </header>
+    <br>
+    <br>
     <div>
        <form action="/tushionapp/ViewFeedback_post/" method="post">
            {% csrf_token %}
            <p>from-date</p>
-                <input type="date" name="fromdate"/>
+                <input type="date" name="fromdate" class="form-control"/>
+           <br>
             <p>to-date</p>
-                <input type="date" name="todate"/>
-           <button type="submit">search</button>
-
+                <input type="date" name="todate" class="form-control"/>
+           <br>
+           <button type="submit" class="btn btn-primary">search</button>
        </form>
     </div>
-
-    <table border="2">
+    <br>
+    <table class="table table-bordered">
         <tr>
             <th>Sl no</th>
             <th>Date</th>
@@ -34,7 +39,7 @@
            <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ i.Date }}</td>
-               <td>{{ i.Student.Class.className }}</td>
+               <td>{{ i.Student.Class.ClassName }}</td>
                 <td>{{ i.Student.name }}</td>
                 <td>{{ i.Tutor.name }}</td>
                 <td>{{ i.feedback }}</td>
@@ -44,4 +49,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>

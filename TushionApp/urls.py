@@ -55,7 +55,7 @@ urlpatterns = [
     path('DeleteAllocateTeacher/<id>', views.DeleteAllocateTeacher),
     path('Logout/',views.Logout),
     path('ajax/get_class_students/<int:class_id>/', views.get_class_students),
-    path('ajax/StudentApproved_search/<int:class_id>/', views.StudentApproved_search),
+    path('ajax/StudentApproved_search/<int:classId>/', views.StudentApproved_search),
     path('ajax/StudentReject_search/<int:class_id>/', views.StudentReject_search),
     path('login_post/', views.login_post),
     path('verifyTutor_post/', views.verifyTutor_post),

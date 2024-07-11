@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
  <h1>View Test</h1>
     <form action="/tushionapp/ViewTest_post/" method="post">
         {% csrf_token %}
-        <select name="cls">
-            {% for i in class %}
-            <option value="{{ i.Class.ClassName }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
-            {% endfor %}
-        </select>
-    <input type="submit" value="search">
+
+         <div class="row g-3 align-items-center">
+                 <div class="col-auto">
+                    <p>search class</p>
+                     <select name="cls" class="form-control">
+
+                        {% for i in class %}
+                            <option value="{{ i.Class.ClassName }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
+                        {% endfor %}
+                    </select>
+                     <input type="submit" value="search" class="btn btn-primary">
+                 </div>
+         </div>
+
     </form>
 
-    <table border="1">
+    <table class="table table-bordered">
         <tr>
             <th>Class</th>
             <th>Subject</th>
@@ -48,4 +58,5 @@
 
 
 </body>
+{% endblock %}
 </html>

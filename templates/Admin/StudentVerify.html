@@ -73,29 +73,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Students verify</h1>
     </header>
-
+    <br>
+    <br>
     <div>
         <section>
-            <p>class</p>
-            <select name="class" id="class">
+
+            <select name="class" id="class" class="form-control">
             <option hidden="">select class</option>
                {% for i in class %}
-                   <option value="{{ i.id }}">{{ i.className }}</option>
+                   <option value="{{ i.id }}">{{ i.ClassName }}</option>
                 {% endfor %}
             </select>
         </section>
     </div>
-
-    <table border="2" id="students-table">
+    <br>
+    <br>
+    <table  id="students-table" class="table table-bordered">
         <thead>
             <tr>
                 <th>Sl no</th>
@@ -153,7 +158,7 @@
                                 '<td>' + student.phone + '</td>' +
                                 '<td>' + student.place + '</td>' +
                                 '<td><img src="' + student.id_proof + '" alt="Id Proof"></td>' +
-                                '<td>' + student.Class__className + '</td>' +
+                                '<td>' + student.Class__ClassName + '</td>' +
                                 '<td><a href="/tushionapp/studentApprove/' + student.Login_id + '">Approve</a></td>' +
                                 '<td><a href="/tushionapp/studentReject/' + student.Login_id + '">Reject</a></td>' +
                                 '</tr>';
@@ -165,4 +170,5 @@
         });
     </script>
 </body>
+{% endblock %}
 </html>

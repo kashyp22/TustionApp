@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
 
     <h1>Send feedback to your teacher</h1>
+    <br>
+    <br>
     <form action="/tushionapp/StudentFeedback_post/" method="post">
         {% csrf_token %}
 
-        <select name="tutor">
+        <select name="tutor" class="form-control">
+
             {% for i in data %}
             <option value="{{ i.Tutor_id }}">{{ i.Subject.Class.ClassName }},{{ i.Subject.SubjectName }},{{ i.Tutor.name }}</option>
             {% endfor %}
         </select>
+    <br>
     <p>feedback</p>
-    <input type="text" name="feedback">
-    <input type="submit">
+    <input type="text" name="feedback" class="form-control">
+    <br>
+    <input type="submit" class="btn btn-primary">
 
     </form>
 
 
 </body>
+{% endblock %}
 </html>

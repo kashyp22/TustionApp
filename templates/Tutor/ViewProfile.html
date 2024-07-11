@@ -4,45 +4,74 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
 
-<h1>profile view</h1>
+<h1>Your Profile </h1>
 
- <form action="/tushionapp/EditProfile_post/" method="post" enctype="multipart/form-data">
+<br>
+<br>
+ <form action="/tushionapp/EditProfile_post/" method="post" enctype="multipart/form-data" >
         {% csrf_token %}
  <input type="hidden" value="{{ data.Login_id }}" name="lid">
 
-       <p> Name</p>
-        <input type="text" name="name" value="{{ data.name }}"/>
-       <p> gender</p>
-       <input type="radio" name="gender" value="male" {% if data.gender == 'male' %}checked{% endif %} /> male
-        <input type="radio" name="gender" value="female" {% if data.gender == 'female' %}checked{% endif %} /> female
-       <p> Qualification</p>
-        <input type="text" name="qulaification" value="{{ data.qualification }}"/>
-       <p> date-of-birth</p>
-        <input type="date" name="dob" value="{{ data.dob | date:'Y-m-d'}}"/>
-{#       <p> email</p>#}
-{#        <input type="email" name="email" value="{{ data.email }}"/>#}
-       <p> phone</p>
-        <input type="text" name="phone" value="{{ data.phone }}"/>
-       <p> experience</p>
-        <input type="text" name="experience" value="{{ data.experience }}"/>
-       <p> place</p>
-        <input type="text" name="place" value="{{ data.place }}"/>
-       <p> id_proof</p>
-             <img src="{{ data.id_proof }}" width="50px" height="50px">
-        <input type="file" name="idproof"/>
-       <p> photo</p>
-            <img src="{{ data.photo }}" width="50px" height="50px">
-        <input type="file" name="photo"/>
+ <table class="table table-bordered">
 
-        <p></p>
-                    <input type="submit" value="edit"/>
+         <tr>
+             <td>Name</td>
+             <td colspan="2"><input type="text" class="form-control" name="name" value="{{ data.name }}"/></td>
+{#             <td></td>#}
+         </tr>
+          <tr>
+             <td>gender</td>
+             <td colspan="2"> <input  type="radio" name="gender" value="male" {% if data.gender == 'male' %}checked{% endif %} /> male
+                <input type="radio" name="gender" value="female" {% if data.gender == 'female' %}checked{% endif %} /> female</td>
+         </tr>
+          <tr>
+             <td>Qualification</td>
+             <td colspan="2"><input type="text" class="form-control" name="qulaification" value="{{ data.qualification }}"/></td>
+         </tr>
+          <tr>
+             <td>date-of-birth</td>
+             <td colspan="2"><input type="date" class="form-control" name="dob" value="{{ data.dob | date:'Y-m-d'}}"/></td>
+         </tr>
+          <tr>
+             <td>phone</td>
+             <td colspan="2"><input type="text" class="form-control" name="phone" value="{{ data.phone }}"/></td>
+         </tr>
+          <tr>
+             <td>experience</td>
+             <td colspan="2"><input type="text" class="form-control" name="experience" value="{{ data.experience }}"/></td>
+         </tr>
+          <tr>
+             <td>place</td>
+             <td colspan="2"><input type="text" class="form-control" name="place" value="{{ data.place }}"/></td>
+         </tr>
+        <tr>
+             <td>id_proof</td>
+            <td><img src="{{ data.id_proof }}" width="150px" height="150px"></td>
+             <td>
+                  <input type="file" name="idproof"/>
+             </td>
+         </tr>
+        <tr>
+             <td>photo</td>
+             <td><img src="{{ data.photo }}" width="150px" height="150px"></td>
+             <td><input type="file" name="photo"/></td>
+         </tr>
+ <tr>
+     <td colspan="3"><div align="center">
+        <input type="submit" value="Edit Profile" class="btn btn-primary btn-lg"/>
+     </div>
+     <div align="center"></div>
+     </td>
+ </tr>
 
-    </form>
+ </table>
 
-
-
+ </form>
 
 </body>
+{% endblock %}
 </html>

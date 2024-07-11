@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
-    <header>
+    <h2>
         Send Complaint Reply
-    </header>
-
+    </h2>
+    <br>
+    <br>
     <main>
-       <form action="/tushionapp/ReplyStudentComplaint_post/" method="post">
+       <form action="/tushionapp/ReplyStudentComplaint_post/#bodyname" method="post">
            {% csrf_token %}
            <div>
                 <input type="hidden" name="id" value="{{ id }}"/>
-                <input type="text" name="reply"/>
+                <input type="text" name="reply" class="form-control"/>
+               <br>
             </div>
         <div>
-            <button type="submit">Send Reply</button>
+            <button type="submit" class="btn btn-primary">Send Reply</button>
         </div>
        </form>
     </main>
 
 
 </body>
+{% endblock %}
 </html>

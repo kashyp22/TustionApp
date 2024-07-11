@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
  <form action="/tushionapp/ViewTimeTable_post/" method="post">
      {% csrf_token %}
-    <input type="text" name="tsearch" placeholder="search day"/>
-    <button type="submit">search</button>
-        <header>View timetable</header>
-         <table border="1">
+{#    <input type="text" name="tsearch" placeholder="search day"/>#}
+    <select name="tsearch" class="form-control">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thusday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+    </select>
+ <br>
+    <button type="submit" class="btn btn-primary">search</button>
+ <br>
+ <br>
+        <h3>View timetable</h3>
+ <br>
+         <table class="table table-bordered">
              <tr>
                  <th>sl no</th>
                  <th>Subject</th>
@@ -32,4 +47,5 @@
     </form>
 
 </body>
+{% endblock %}
 </html>

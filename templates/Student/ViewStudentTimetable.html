@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
+{% extends 'Student/StudentIndex.html' %}
+{% block body %}
 <body>
 <h1>View TimeTable</h1>
+    <br>
+    <br>
      <form action="/tushionapp/ViewStudentTimeTable_post/" method="post">
         {% csrf_token %}
-        <input type="text" name="subject">
-        <input type="submit">
-    </form>
 
-    <table border="1">
+        <input type="text" name="subject" placeholder="Subject" class="form-control">
+         <br>
+        <input type="submit" class="btn btn-primary" value="Search">
+         <br>
+    </form>
+    <br>
+    <br>
+    <table class="table table-bordered">
         <tr>
             <th>Day</th>
             <th>Hour</th>
             <th>Subject</th>
-            <td></td>
+
         </tr>
         {% for i in data %}
         <tr>
@@ -29,4 +38,5 @@
     </table>
 
 </body>
+{% endblock %}
 </html>
