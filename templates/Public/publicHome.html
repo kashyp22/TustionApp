@@ -23,7 +23,7 @@
 	<header id="site-header">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark stroke">
-				<h1><a class="navbar-brand" href="/tushionapp/HomeAdmin">
+				<h1><a class="navbar-brand" href="/tushionapp/ViewPublic">
 					<span class="fa fa-book"></span> Tution App
 				</a></h1>
 				<!-- if logo is image enable this
@@ -39,7 +39,7 @@
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="/tushionapp/StudentHome">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="/tushionapp/ViewPublic">Home <span class="sr-only">(current)</span></a>
 						</li>
 {#                        <li class="nav-item dropdown @@services__active">#}
 {#                             <a class="nav-link dropdown-toggle" href="/tushionapp/ViewStudentNotification/"  >#}
@@ -47,41 +47,29 @@
 {#                             </a>#}
 {##}
 {#                        </li>#}
-
                         <li class="nav-item dropdown @@services__active">
-                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 Views
+                             <a class="nav-link dropdown-toggle" href="/tushionapp/PublicViewTutor/#bodyname">
+                                 Tutor
                              </a>
-                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                 <a class="dropdown-item" href="/tushionapp/ViewStudentTest/#bodyname">view Tests </a>
-                                 <a class="dropdown-item" href="/tushionapp/ViewStudentResult/#bodyname">view Test Result</a>
-                                 <a class="dropdown-item" href="/tushionapp/ViewStudentNotification/#bodyname">view Notification</a>
-                                 <a class="dropdown-item" href="/tushionapp/ViewStudentProfile/#bodyname">view profile</a>
-                                 <a class="dropdown-item" href="/tushionapp/ViewStudentAttendence/#bodyname">view Attendence</a>
-                                 <a class="dropdown-item" href="/tushionapp/ViewStudentTimeTable/#bodyname">View TimeTable</a>
-                                 <a class="dropdown-item" href="/tushionapp/ViewSubject/#bodyname">View Subject</a>
-                            </div>
+
+                        </li>
+                        <li class="nav-item dropdown @@services__active">
+                             <a class="nav-link dropdown-toggle" href="/tushionapp/PublicViewSubject/#bodyname">
+                                 Subjects
+                             </a>
+
 						</li>
 
 
-
-
 						<li class="nav-item dropdown @@services__active">
-                             <a class="nav-link dropdown-toggle" href="/tushionapp/AddStudentComplaint/#bodyname" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 Others
+                             <a class="nav-link dropdown-toggle" href="/tushionapp/PublicViewtimetable/#bodyname">
+                                 TimeTable
                              </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/tushionapp/AddStudentComplaint/#bodyname">Send Complaint</a>
-                                <a class="dropdown-item" href="/tushionapp/ViewStudentreply/#bodyname">View Reply</a>
-                                <a class="dropdown-item" href="/tushionapp/StudentFeedback/#bodyname">send teacher Feedbacks</a>
-                                <a class="dropdown-item" href="/tushionapp/StudentChangePassword/#bodyname">Change password</a>
-                            </div>
                         </li>
 
 
-
                         <li class="nav-item mr-2">
-								<a href="/tushionapp/Logout/" class="btn btn-primary register d-lg-block btn-style">Logout</a>
+								<a href="/tushionapp/login/" class="btn btn-primary register d-lg-block btn-style">Login</a>
 						</li>
 
 					</ul>
@@ -190,7 +178,7 @@ $(function () {
   <div class="slide header11" data-selector="header11">
       <div class="container">
           <div class="banner-text ">
-              <h5 class=" ">Hello Students<br> We Present Education<br> in beautiful way!</h5>
+              <h5 class=" "> Present Education<br> in beautiful way!</h5>
               <p class=" ">Adipi sicing elit. Quia, aliquid voluptatum corporis Dicta. Deleniti possimus culpa nemo asperiores aperiam mollitia, maiores Lorem ipsum dolor.</p>
               <div >
                 <form class="form-inline forms-gds" action="#" method="post">
@@ -221,8 +209,8 @@ $(function () {
                         Unlimited Access</a></h5>
                     <p class="para editContent">Sit amet consect etur adipi sicing elit. Rem quib usdam corporis, dolores
                         quos, nobis culpa est</p>
-            </div>
-            </div>
+                    </div>
+                 </div>
             <div class="col-lg-4 col-md-6 propClone about-line-top ">
                 <div class="area-box color-white editContent">
                     <div class="icon-back"><span class="fa fa-users"></span></div>

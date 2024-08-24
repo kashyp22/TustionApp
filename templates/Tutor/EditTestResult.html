@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Tutor/TutorIndex.html' %}
+{% block body %}
 <body>
     <h1>Result upload</h1>
+    <br>
     <form action="/tushionapp/EditTestResult_post/" method="post">
         {% csrf_token %}
     <input type="hidden" value="{{ data.id }}" name="rid">
 
         <p>select Test</p>
-        <select name="testdetails">
+    <br>
+        <select name="testdetails" class="form-control">
             {% for i in test %}
 {#            <option value="{{ i.id }} ">{{ i.Test_name }}</option>#}
                 <option value="{{ i.id }}" {% if i.id == data.id %}selected{% endif %}>{{ i.Test_name }}</option>
             {% endfor %}
         </select>
+    <br>
         <p>select Student</p>
-        <select name="student">
+    <br>
+        <select name="student" class="form-control">
             {% for i in student  %}
 {#            <option value="{{ i.id }}">{{ i.name }}</option>#}
                 <option value="{{ i.id }}" {% if i.id == data.id %}selected{% endif %}>{{ i.name }}</option>
             {% endfor %}
         </select>
+    <br>
         <p>Add Mark</p>
-    <input type="number" name="mark" value="{{ data.mark }}">
+    <br>
+    <input type="number" name="mark" value="{{ data.mark }}" class="form-control">
     <br>
     <br>
-    <input type="submit" value="edit mark">
+    <input type="submit" value="edit mark" class="btn btn-primary">
     </form>
 </body>
+{% endblock %}
 </html>

@@ -17,6 +17,11 @@
  <input type="hidden" value="{{ data.Login_id }}" name="lid">
 
  <table class="table table-bordered">
+         <tr>
+
+             <td colspan="3"><img src="{{ data.photo }}" width="150px" height="150px"><input type="file" name="photo"/></td>
+
+         </tr>
 
          <tr>
              <td>Name</td>
@@ -50,16 +55,10 @@
          </tr>
         <tr>
              <td>id_proof</td>
-            <td><img src="{{ data.id_proof }}" width="150px" height="150px"></td>
-             <td>
-                  <input type="file" name="idproof"/>
-             </td>
+            <td colspan="2"><img src="{{ data.id_proof }}" width="150px" height="150px">&nbsp;&nbsp;<input type="file" name="idproof"/></td>
+
          </tr>
-        <tr>
-             <td>photo</td>
-             <td><img src="{{ data.photo }}" width="150px" height="150px"></td>
-             <td><input type="file" name="photo"/></td>
-         </tr>
+
  <tr>
      <td colspan="3"><div align="center">
         <input type="submit" value="Edit Profile" class="btn btn-primary btn-lg"/>

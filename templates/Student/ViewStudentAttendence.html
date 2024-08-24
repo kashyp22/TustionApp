@@ -14,10 +14,10 @@
         {% csrf_token %}
 
         <p>From</p>
-        <input type="date" name="fromdate" class="form-control">
+        <input type="date" name="fromdate" class="form-control" required>
         <br>
         <p>To</p>
-        <input type="date" name="to" class="form-control">
+        <input type="date" name="to" class="form-control" required>
         <br>
         <input type="submit" class="btn btn-primary">
     </form>

@@ -7,15 +7,17 @@
 {% extends 'Admin/AdminIndex.html' %}
 {% block body %}
 <body>
-     <form action="/tushionapp/ViewClass_post/" method="post">
+     <form action="/tushionapp/ViewClass_post/#bodyname" method="post">
      {% csrf_token %}
         <section>
-            <input type="text" name="clsearch"/>
-            <button type="submit">search</button>
+            <input type="text" name="clsearch" class="form-control" required/>
+            <br>
+            <button type="submit" class="btn btn-primary">search</button>
         </section>
-
+        <br>
         <header>View Class</header>
-         <table border="2">
+        <br>
+         <table class="table table-bordered">
              <tr>
                  <th>sl no</th>
                  <th>Class</th>
@@ -26,7 +28,7 @@
                <tr>
                  <td>{{ forloop.counter }}</td>
                  <td>{{ i.ClassName }}</td>
-                 <td><a href="/tushionapp/EditClass/{{ i.id }}">Edit</a> </td>
+                 <td><a href="/tushionapp/EditClass/{{ i.id }}#bodyname">Edit</a> </td>
                  <td><a href="/tushionapp/deleteClass/{{ i.id }}">Delete</a> </td>
                </tr>
            {% endfor %}

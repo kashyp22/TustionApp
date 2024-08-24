@@ -17,9 +17,9 @@
         <div class="col-auto">
            <p>Student</p>
             <select name="student1" value="" class="form-control">
-        {% for i in student %}
-            <option value="{{ i.id }}">{{ i.name }}</option>
-        {% endfor %}
+{#        {% for i in student %}#}
+            <option value="{{ student.id }}">{{ student.name }}</option>
+{#        {% endfor %}#}
         </select>
         <br>
         <p>Class</p>
@@ -30,13 +30,13 @@
         </select>
         <br>
         <p>date</p>
-        <input type="date" name="date" class="form-control">
+        <input type="date" name="date" class="form-control" required>
         <br>
         <p>hour</p>
-        <input type="text" name="hour" class="form-control">
+        <input type="text" name="hour" class="form-control" required>
         <br>
         <p>present status</p>
-        <input type="text" name="pstatus" class="form-control">
+        <input type="text" name="pstatus" class="form-control" required>
         <br>
         <input type="submit" value="ADD" class="btn btn-primary">
 

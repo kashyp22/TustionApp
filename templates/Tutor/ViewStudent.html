@@ -11,7 +11,7 @@
     <header>
         <h1>View Students</h1>
     </header>
-
+    <br>
     <form method="post" action="/tushionapp/ViewStudent_post/#bodyname">
         {% csrf_token %}
         <table class="pull-left">
@@ -19,7 +19,7 @@
 
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <input type="text" name="student" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    <input type="text" name="student" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
                 </div>
                 <div class="col-auto">
                     <span id="passwordHelpInline" class="form-text">
@@ -30,7 +30,7 @@
 
         </table>
     </form>
-
+<br><br>
 <table class="table table-bordered">
     <tr>
         <th>sl no</th>
@@ -42,6 +42,8 @@
         <th>phone</th>
         <th>place</th>
         <th>class</th>
+        <th>Upload result</th>
+        <th>Upload Attendence</th>
     </tr>
       {% for i in data %}
     <tr>
@@ -54,6 +56,8 @@
         <td>{{ i.phone }}</td>
         <td>{{ i.place }}</td>
         <td>{{ i.Class.ClassName }}</td>
+        <td><a href="/tushionapp/AddTestResult/{{ i.id }}#bodyname">Upload result</a></td>
+        <td><a href="/tushionapp/AddAttendence/{{ i.id }}#bodyname">Upload Attendence</a></td>
     </tr>
     {% endfor %}
 </table>

@@ -13,29 +13,27 @@
     <div class="w3l-specification-6">
         <h2>view your allocated subject</h2>
     </div>
-
+    <br><br>
     <div>
     <form action="/tushionapp/ViewMySubject_post/#bodyname" method="post">
         {% csrf_token %}
     <table class="pull-left">
     <tr>
-        <td>
-        Class
-        <select name="class" class="form-control-sm">
 
+
+        <select name="class" class="form-control">
             {% for i in cdata %}
          <option value="{{ i.id }}">{{ i.ClassName }}</option>
             {% endfor %}
         </select>
-        </td>
-        <td>
-            <input type="submit" value="search" class="btn btn-danger">
-        </td>
+    <br>
+            <input type="submit" value="search" class="btn btn-primary">
+
     </tr>
     </table>
     </form>
-
-    <table border="" class="table table-bordered">
+<br><br>
+    <table  class="table table-bordered">
         <tr>
             <th>Sl no</th>
             <th>Subject</th>

@@ -24,10 +24,10 @@
         <br>
         <br>
         <p>Name</p>
-        <input type="text" name="sname" value="{{ data.name }}" class="form-control">
+        <input type="text" name="sname" value="{{ data.name }}" class="form-control" required>
         <br>
         <p>Dob</p>
-        <input type="date" name="dob" value="{{ data.dob|date:'Y-m-d'}}" class="form-control">
+        <input type="date" name="dob" value="{{ data.dob|date:'Y-m-d'}}" class="form-control" required>
          <br>
         <p>gender</p>
         <input type="radio" name="gender" value="{{ data.gender }}" {% if data.gender == "male" %}checked{% endif %}>  male
@@ -37,10 +37,10 @@
         <br>
         <br>
         <p>Phone</p>
-        <input type="number" name="phn" value="{{ data.phone }}" class="form-control">
+        <input type="number" name="phn" value="{{ data.phone }}" class="form-control" required>
          <br>
         <p>Place</p>
-        <input type="text" name="place" value="{{ data.place }}" class="form-control">
+        <input type="text" name="place" value="{{ data.place }}" class="form-control" required>
       <br>
         <p>idproof</p>
         <img src="{{ data.id_proof }}" height="100px" width="100px">
@@ -49,7 +49,7 @@
         <br>
         <p>Class</p>
 
-        <input value="{{ data.Class.ClassName }}" class="form-control">
+        <input value="{{ data.Class.ClassName }}" readonly class="form-control" required>
 
 {#        <select name="class" class="form-control">#}
 {#            {% for i in class %}#}
@@ -67,6 +67,5 @@
 
 
 </body>
-
 {% endblock %}
-</html>0
+</html>

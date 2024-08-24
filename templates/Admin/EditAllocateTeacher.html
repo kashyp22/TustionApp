@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
     <form action="/tushionapp/EditAllocateTeacher_post/" method="post">
     {% csrf_token %}
-    <input type="hidden" name="eid" value="{{ data.id }}"/>
+    <input type="hidden" name="eid" value="{{ data.id }}" class="form-control"/>
         <p>Subject</p>
-    <select name="subject">
+    <br>
+    <select name="subject" class="form-control">
         {% for i in sub %}
-            <option value="{{ i.id }}" {% if i.id == data.Subject_id %}selected{% endif %}>{{ i.SubjectName }}</option>        {% endfor %}
+            <option value="{{ i.id }}" {% if i.id == data.Subject_id %}selected{% endif %}>{{ i.Class.ClassName }},&nbsp;{{ i.SubjectName }}</option>        {% endfor %}
     </select>
+    <br> <br>
     <p>Teacher</p>
-
-        <select name="tutor">
+    <br>
+        <select name="tutor" class="form-control">
             {% for i in tut %}
                 <option value="{{ i.id }}" {% if i.id == data.Tutor_id %}selected{% endif %}>{{ i.name }}</option>
             {% endfor %}
-
         </select>
-
-        <button type="submit">allocate</button>
-
+    <br><br>
+        <button type="submit" class="btn btn-primary">allocate</button>
     </form>
-
-
 </body>
+{% endblock %}
 </html>

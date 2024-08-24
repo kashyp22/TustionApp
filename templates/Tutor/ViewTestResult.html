@@ -22,7 +22,7 @@
 
       </div>
     <div class="col-auto">
-        <input type="text" name="sname" placeholder="student name" class="form-control">
+        <input type="text" name="sname" placeholder="student name" class="form-control" required>
     </div>
      <input type="submit" value="search" class="btn btn-primary">
     </div>
@@ -43,7 +43,7 @@
             <td>{{ i.Student.name }}</td>
             <td>{{ i.Student.Class.ClassName }}</td>
             <td>{{ i.mark }}</td>
-            <td><a href="/tushionapp/EditTestResult/{{ i.id }}">Edit</a> </td>
+            <td><a href="/tushionapp/EditTestResult/{{ i.id }}#bodyname">Edit</a> </td>
             <td><a href="/tushionapp/DeleteTestResult/{{ i.id }}">Delete</a> </td>
         </tr>
         {% endfor %}

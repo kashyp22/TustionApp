@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
      <form action="/tushionapp/EditSubjects_post/" method="post">
      {% csrf_token %}
-        <header>edit Subjects</header>
-
-        <h2>Class</h2>
-        <select name="cls">
+        <h1>Edit Subjects</h1>
+        <br>
+        <br>
+        <h5>Class</h5>
+        <br>
+        <select name="cls" class="form-control">
             {% for i in data %}
-            <option value="{{ i.id }}" {% if i.id == data2.Class_id %}selected{% endif %}>{{ i.className }}</option>
+            <option value="{{ i.id }}" {% if i.id == data2.Class_id %}selected{% endif %}>{{ i.ClassName }}</option>
             {% endfor %}
         </select>
+        <br>
+        <h5>Subjects</h5>
+        <br>
+        <input type="hidden" name="sid" value="{{ data2.id }}" class="form-control"/>
 
-        <h2>Subjects</h2>
-        <input type="hidden" name="sid" value="{{ data2.id }}"/>
-        <input type="text" name="subject" value="{{ data2.SubjectName }}"/>
-        <button type="submit">Edit Subject</button>
+        <input type="text" name="subject" value="{{ data2.SubjectName }}" class="form-control" required/>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Edit Subject</button>
     </form>
 
 
 </body>
+{% endblock %}
 </html>

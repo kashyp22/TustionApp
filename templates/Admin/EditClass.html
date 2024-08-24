@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
    <form action="/tushionapp/EditClass_post/" method="post">
        {% csrf_token %}
-        <header>edit Class</header>
-
-
-        <h3> Class name </h3>
-       <input type="hidden" name="cid" value="{{ data.id }}"/>
-        <input type="text" name="class" value="{{ data.className }}"/>
-        <button type="submit" >Edit</button>
+   <h2>Edit class</h2>
+        <br>
+        <br>
+        <h5> Class name </h5>
+        <br>
+       <input type="hidden" name="cid" value="{{ data.id }}" />
+{#        <input type="text" name="class" value="{{ data.ClassName }}"/>#}
+       <select name="class" class="form-control">
+           {% for i in data2 %}
+               <option value="{{ i.ClassName }}" {% if i.id == data.id %}selected{% endif %}>{{ i.ClassName }}</option>
+           {% endfor %}
+       </select>
+   <br>
+        <button type="submit" class="btn btn-primary">Edit</button>
     </form>
-
-
 </body>
+{% endblock %}
 </html>

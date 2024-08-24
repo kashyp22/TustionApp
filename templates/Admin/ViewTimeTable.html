@@ -7,7 +7,7 @@
 {% extends 'Admin/AdminIndex.html' %}
 {% block body %}
 <body>
- <form action="/tushionapp/ViewTimeTable_post/" method="post">
+ <form action="/tushionapp/ViewTimeTable_post/#bodyname" method="post">
      {% csrf_token %}
 {#    <input type="text" name="tsearch" placeholder="search day"/>#}
     <select name="tsearch" class="form-control">
@@ -39,7 +39,7 @@
                  <td>{{ i.Subject.SubjectName}}</td>
                  <td>{{ i.day }}</td>
                  <td>{{ i.hour }}</td>
-                 <td><a href="/tushionapp/EditTimeTable/{{ i.id }}">Edit</a> </td>
+                 <td><a href="/tushionapp/EditTimeTable/{{ i.id }}#bodyname">Edit</a> </td>
                  <td><a href="/tushionapp/DeleteTimeTable/{{ i.id }}">Delete</a> </td>
              </tr>
              {% endfor %}

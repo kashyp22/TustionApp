@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.core.checks import messages
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -28,17 +29,23 @@ def login_post(req):
         elif lg2.type == 'student':
             return HttpResponse("""<script>window.alert('Studen login success');window.location='/tushionapp/StudentHome/'</script>""")
         else:
-            return HttpResponse('''<script>alert("not found"); window.location='/tushionapp/login/'</script>''')
+            return HttpResponse('''<script>alert("user not found"); window.location='/tushionapp/login/'</script>''')
     else:
-        return HttpResponse('''<script> alert("not found"); window.location='/tushionapp/login/' </script>''')
+        return HttpResponse('''<script> alert("username or password wrong or no user "); window.location='/tushionapp/login/' </script>''')
 
 
 def HomeAdmin(req):
-    return render(req,'Admin/AdminIndex.html')
+    if req.session['lid']==' ':
+        return HttpResponse('''<script> alert("please Login"); window.location='/tushionapp/login/';wi </script>''')
+    else:
+        return render(req,'Admin/AdminIndex.html')
 
 def verifyTutor(req):
-    s=Tutor.objects.filter(status='pending')
-    return render(req,'Admin/verifyTutor.html',{'data':s})
+    if req.session['lid']=='':
+        return HttpResponse('''<script> alert("please Login"); window.location='/tushionapp/login/';wi </script>''')
+    else:
+        s=Tutor.objects.filter(status='pending')
+        return render(req,'Admin/verifyTutor.html',{'data':s})
 
 def verifyTutor_post(req):
     data=req.POST['tutorSearch']
@@ -170,7 +177,7 @@ def ViewClass(req):
 
 def ViewClass_post(req):
     s=req.POST["clsearch"]
-    data=ClassStudy.objects.filter(className__icontains=s)
+    data=ClassStudy.objects.filter(ClassName__icontains=s)
     return render(req,'Admin/ViewClass.html',{"data":data})
 
 def AddClass(req):
@@ -179,18 +186,19 @@ def AddClass(req):
 def AddClass_post(req):
     cl=req.POST['class']
     data=ClassStudy()
-    data.className=cl
+    data.ClassName=cl
     data.save()
     return HttpResponse("""<script>alert("Class added");window.location='/tushionapp/ViewClass/' </script>""")
 
 def EditClass(req,id):
     a=ClassStudy.objects.get(id=id)
-    return render(req,'Admin/EditClass.html',{"data":a})
+    b=ClassStudy.objects.all()
+    return render(req,'Admin/EditClass.html',{"data":a,"data2":b})
 def EditClass_post(req):
     cl=req.POST['class']
     cid=req.POST['cid']
     data=ClassStudy.objects.get(id=cid)
-    data.className=cl
+    data.ClassName=cl
     data.save()
     return HttpResponse("""<script>alert("edited");window.location='/tushionapp/ViewClass/' </script>""")
 
@@ -217,7 +225,7 @@ def AddSubjects_post(req):
     data.Class_id=c
     data.SubjectName=s
     data.save()
-    return HttpResponse("""<script>alert("subject added successfully");window.location='/tushionapp/ViewSubjects/' </script>""")
+    return HttpResponse("""<script>alert("subject added successfully");window.location='/tushionapp/AddSubjects/#bodyname' </script>""")
 def EditSubjects(req,id):
     s=Subjects.objects.get(id=id)
     res = ClassStudy.objects.all()
@@ -325,7 +333,18 @@ def DeleteAllocateTeacher(req,id):
 
 def Logout(req):
     req.session['lid']=" "
-    return HttpResponse("""<script>alert("logout successfully done");window.location='/tushionapp/login/'</script>""")
+    # req.session.flush()
+    return HttpResponse("""<script>alert("logout successfully done");window.location='/tushionapp/login/';window.reload=''</script>""")
+
+# def Logout(req):
+#     # Clear the session
+#     req.session.flush()
+#
+#     # Optionally, add a success message (if you have message framework set up)
+#     # messages.success(req, "Logout successfully done")
+#
+#     # Redirect to the login page
+#     return redirect('/tushionapp/login/')
 
 
                     # ------------------------------------------------------------------------
@@ -340,7 +359,7 @@ def TutorHome_post(req):
     return render(req,'Tutor/TutorHome.html')
 
 def SignupTutor(req):
-    return render(req,'Tutor/SignupTutor.html')
+    return render(req,'Tutor/TutorSignupindex.html')
 
 def SignupTutor_post(req):
     name=req.POST['name']
@@ -518,8 +537,8 @@ def EditNotification_post(req):
 def DeleteNotification(req,id):
     Notification.objects.get(id=id).delete()
     return HttpResponse("""<script>window.alert("Notification Deleted");window.location='/tushionapp/ViewNotification/'</script>""")
-def AddAttendence(req):
-    sd=Student.objects.all()
+def AddAttendence(req,id):
+    sd=Student.objects.get(id=id)
     cls=ClassStudy.objects.all()
     return render(req,'Tutor/AddAttendence.html',{"student":sd,"class":cls})
 
@@ -537,7 +556,7 @@ def AddAttendence_post(req):
     attd.pstatus = pstatus
     attd.hour = hour
     attd.save()
-    return HttpResponse("""<script>window.alert("attendence added ");window.location='/tushionapp/ViewAttendence/'</script>""")
+    return HttpResponse("""<script>window.alert("attendence added ");window.location='/tushionapp/ViewAttendence/#bodyname'</script>""")
 
 def ViewAttendence(req):
     data=Attendence.objects.all()
@@ -631,8 +650,8 @@ def DeleteTest(req,id):
     data=TestDetails.objects.get(id=id).delete()
     return HttpResponse("""<script>window.alert("deleted");window.location='/tushionapp/ViewTest/' </script>""")
 
-def AddTestResult(req):
-    student=Student.objects.all()
+def AddTestResult(req,id):
+    student=Student.objects.get(id=id)
     testd=TestDetails.objects.all()
     return render(req,'Tutor/UploadTestResult.html',{"student":student,"test":testd})
 
@@ -732,14 +751,14 @@ def StudentHome(req):
 
 def StudentSignup(req):
     cls=ClassStudy.objects.all()
-    return render(req,'Student/StudentSignup.html',{"class":cls})
+    return render(req,'Student/StudentSignupindex.html',{"class":cls})
 
 def StudentSignup_post(req):
     name = req.POST['sname']
     gender = req.POST['gender']
     # q = req.POST['qulaification']
     dob1 = req.POST['dob']
-    pht = req.FILES['phto']
+    pht = req.FILES['photo']
     eml = req.POST['email']
     phn = req.POST['phn']
     cls = req.POST['class']
@@ -802,14 +821,13 @@ def EditStudentProfile_post(req):
     # q = req.POST['qulaification']
     dob1 = req.POST['dob']
     phn = req.POST['phn']
-    cls = req.POST['class']
+    # cls = req.POST['class']
     plc = req.POST['place']
 
     r=Student.objects.get(Login_id=req.session['lid'])
 
     if 'phto' in req.FILES:
         pht = req.FILES['phto']
-
         date = datetime.now().strftime('%Y%m%d-%H%M%S') + ".jpg"
         fs = FileSystemStorage()
         fs.save(date, pht)
@@ -833,7 +851,7 @@ def EditStudentProfile_post(req):
     r.gender = gender
     # r.password = pswd
     r.phone = phn
-    r.Class_id = cls
+    # r.Class_id = cls
     r.save()
     # return HttpResponse("""<script>alert("edited");window.location='/tushionapp/ViewStudentProfile/'</sctipt>""")
     return HttpResponse("""<script>alert(" student edited successfull");window.location='/tushionapp/StudentHome/'</script>""")
@@ -963,3 +981,137 @@ def StudentFeedback_post(req):
 def StudentLogout(req):
     req.session['lid']=''
     return render(req,'Login.html')
+
+#--------------------------------   Public
+
+def ViewPublic(req):
+    return render(req,'Public/publicHome.html')
+
+def PublicViewTutor(req):
+    data=Mysubject.objects.all()
+    return render(req,'Public/publicViewtutor.html',{"data":data})
+
+def PublicViewSubject(req):
+    data=Subjects.objects.all()
+    return render(req,'Public/publicViewsubject.html',{"data":data})
+
+def PublicViewtimetable(req):
+    data=Timetable.objects.all()
+    return render(req,'Public/publicViewtimetable.html',{"data":data})
+
+# -------------------------flutter student
+
+def viewflutStudentSignup(req):
+    cls=ClassStudy.objects.all()
+    l=[]
+    for i in cls:
+        l.append({'id':i.id,'classname':i.ClassName})
+    print(l,"llllll")
+    return JsonResponse({"status":"ok","data":l})
+
+
+def flutStudentSignup(req):
+    name=req.POST["uname"]
+    dob=req.POST["dob"]
+    gender=req.POST["gender"]
+    email=req.POST["em"]
+    phone=req.POST["phn"]
+    place=req.POST["plc"]
+    pwd=req.POST["pwd"]
+    cpwd=req.POST["cpwd"]
+    photo=req.POST["photo"]
+    idprd=req.POST["idproof"]
+    cls=req.POST["class"]
+
+    import base64
+    date = datetime.now().strftime("%y%m%d-%H%M%S")
+    a = base64.b64decode(photo)
+    fh= open("C:\\Users\\kashy\\PycharmProjects\\TushionClass\\media\\Student\\"+date+".jpg","wb")
+    phpath = '/media/Student/' + date + '.jpg'
+    fh.write(a)
+    fh.close()
+
+    date1 = datetime.now().strftime("%y%m%d-%H%M%S")
+    a1 = base64.b64decode(idprd)
+    fh= open("C:\\Users\\kashy\\PycharmProjects\\TushionClass\\media\\Student\\"+date1+"-1.jpg","wb")
+    idpath = '/media/Student/' + date1 + '-1.jpg'
+    fh.write(a1)
+    fh.close()
+
+    if pwd == cpwd:
+        if Login.objects.filter(username=email).exists():
+            return JsonResponse({"status":"No"})
+        login=Login()
+        login.username=email
+        login.password=cpwd
+        login.type="student"
+        login.save()
+
+        st=Student()
+        st.name=name
+        st.dob=dob
+        st.email=email
+        st.phone=phone
+        st.place=place
+        st.photo=phpath
+        st.id_proof=idpath
+        st.gender=gender
+        st.status="pending"
+        st.Class_id=cls
+        st.Login=login
+        st.save()
+        return JsonResponse({"status":"ok"})
+    else:
+        return JsonResponse({"status":"no"})
+
+
+
+def flutStudentLogin(req):
+    uname=req.POST["uname"]
+    upassword=req.POST["password"]
+    print(uname,upassword)
+    lg1=Login.objects.filter(username=uname,password=upassword)
+    if lg1.exists():
+        lg2=Login.objects.get(username=uname,password=upassword)
+        lid=lg2.id
+        if lg2.type == "student":
+            print('ok')
+            return JsonResponse({"status":"ok","lid":str(lid)})
+        else:
+            return JsonResponse({"status":"no"})
+    else:
+        return JsonResponse({"status":"no"})
+
+
+def ViewFlutStudentProfile(req):
+    lid=req.POST['lid']
+    stu=Student.objects.get(Login_id=lid)
+    print(stu.place)
+    return JsonResponse({"status":"ok",
+                         "name":stu.name,
+                         "dob":stu.dob,
+                         "photo":stu.photo,
+                         "gender":stu.gender,
+                         "email":stu.email,
+                         "phone":stu.phone,
+                         "place":stu.place,
+                         "idproof":stu.id_proof,
+                         "class":stu.Class.ClassName
+                         })
+
+
+
+def EditProfileFlut(req):
+    name = req.POST["uname"]
+    dob = req.POST["dob"]
+    gender = req.POST["gender"]
+    email = req.POST["em"]
+    phone = req.POST["phn"]
+    place = req.POST["plc"]
+    photo = req.POST["photo"]
+    idprd = req.POST["idproof"]
+    cls = req.POST["class"]
+    uid=req.POST['uid']
+    print(name,dob,gender,email,phone,place,photo,idprd,cls,)
+    print(uid)
+    return

@@ -22,11 +22,11 @@
                 {% endfor %}
              </select>
     <br>
-        <p>Select student</p>
+        <p>Selected student</p>
         <select name="student" class="form-control">
-            {% for i in student  %}
-            <option value="{{ i.id }}">{{ i.name }}</option>
-            {% endfor %}
+
+            <option value="{{ student.id }}">{{ student.name }}</option>
+
         </select>
     <br>
           <p>Add Mark</p>

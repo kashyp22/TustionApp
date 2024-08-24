@@ -8,21 +8,23 @@
 {% block body %}
 <body>
 
-    <form action="/tushionapp/AddSubjects_post/" method="post">
+    <form action="/tushionapp/AddSubjects_post/#bodyname" method="post">
     {% csrf_token %}
-        <header>Add Subjects</header>
-
-        <h2>Class</h2>
-        <select name="cls">
-
+        <h1>Add Subjects</h1>
+        <br>
+        <h5>Class</h5>
+        <br>
+        <select name="cls" class="form-control">
             {% for i in data %}
             <option value="{{ i.id }}">{{ i.ClassName }}</option>
             {% endfor %}
         </select>
-
-        <h2>Subjects</h2>
-        <input type="text" name="subject"/>
-        <button type="submit">add Subject</button>
+        <br>
+        <h5>Subjects</h5>
+        <br>
+        <input type="text" name="subject" class="form-control" placeholder="Subject Name " required/>
+        <br>
+        <button type="submit" class="btn btn-primary">add Subject</button>
     </form>
 </body>
 {% endblock %}

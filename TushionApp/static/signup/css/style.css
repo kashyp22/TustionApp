@@ -158,7 +158,7 @@ a.w3_play_icon1 {
     border-radius: 5px;
 	outline:none;
 }
-.w3_agile_login input[type="email"], .w3_agile_login input[type="password"], .w3_agile_login input[type="text"] {
+.w3_agile_login input[type="email"], .w3_agile_login input[type="password"], .w3_agile_login input[type="text"],.w3_agile_login input[type="date"],.w3_agile_login input[type="file"],.w3_agile_login select,.w3_agile_login input[type="number"] {
     padding: 0.7em 1em;
     margin: 1em 0em 1em 0;
     color: #000;

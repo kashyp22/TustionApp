@@ -11,21 +11,21 @@
     <form action="/tushionapp/ViewTest_post/" method="post">
         {% csrf_token %}
 
-         <div class="row g-3 align-items-center">
-                 <div class="col-auto">
+
+
+                 <br>
                     <p>search class</p>
                      <select name="cls" class="form-control">
-
                         {% for i in class %}
                             <option value="{{ i.Class.ClassName }}">{{ i.Class.ClassName }},{{ i.SubjectName }}</option>
                         {% endfor %}
                     </select>
+                 <br>
                      <input type="submit" value="search" class="btn btn-primary">
-                 </div>
-         </div>
 
+    
     </form>
-
+<br><br>
     <table class="table table-bordered">
         <tr>
             <th>Class</th>
@@ -48,7 +48,7 @@
             <td>{{ i.Date }}</td>
             <td>{{ i.FromTime }}</td>
             <td>{{ i.ToTime }}</td>
-            <td><a href="/tushionapp/EditTest/{{ i.id }}">Edit</a> </td>
+            <td><a href="/tushionapp/EditTest/{{ i.id }}#bodyname">Edit</a> </td>
             <td><a href="/tushionapp/DeleteTest/{{ i.id }}">Delete</a> </td>
 
         </tr>

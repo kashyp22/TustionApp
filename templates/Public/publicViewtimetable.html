@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends 'Public/publicHome.html' %}
+{% block body %}
+<body>
+    <h3 style="font-family: 'Alegreya Sans SC', sans-serif">View Timetable</h3>
+    <br>
+    <br>
+
+    <div class="color-white">
+    <table class="table table-bordered table-primary">
+        <tr>
+            <th> Sl No</th>
+            <th>Subject</th>
+            <th>Hour</th>
+            <th>day</th>
+        </tr>
+
+        {% for i in data %}
+            <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.Subject.SubjectName }}</td>
+            <td>{{ i.hour }}</td>
+            <td>{{ i.day }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+{% endblock %}
+</html>

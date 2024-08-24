@@ -9,22 +9,22 @@
     <form action="/tushionapp/StudentSignup_post/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p>Name</p>
-        <input type="text" name="sname">
+        <input type="text" name="sname" required>
         <p>Dob</p>
         <input type="date" name="dob">
         <p>gender</p>
-        <input type="radio" name="gender" value="male"> male
+        <input type="radio" name="gender" value="male" checked> male
         <input type="radio" name="gender" value="female"> female
         <p>email</p>
-        <input type="email" name="email">
+        <input type="email" name="email" required>
         <p>Phone</p>
-        <input type="number" name="phn">
+        <input type="number" name="phn" required>
         <p>Place</p>
-        <input type="text" name="place">
+        <input type="text" name="place" required>
         <p>Photo</p>
-        <input type="file" name="phto">
+        <input type="file" name="phto" required>
         <p>idproof</p>
-        <input type="file" name="idprf">
+        <input type="file" name="idprf" required>
         <p>Class</p>
         <select name="class">
             {% for i in class %}
@@ -32,9 +32,9 @@
             {% endfor %}
         </select>
         <p>password</p>
-        <input type="password" name="pswd">
+        <input type="password" name="pswd" required>
         <p>confirm password</p>
-        <input type="password" name="cpswd">
+        <input type="password" name="cpswd" required>
         <p></p>
         <input type="submit" value="submit">
     </form>

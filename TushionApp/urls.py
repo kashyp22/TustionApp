@@ -86,7 +86,7 @@ urlpatterns = [
     path('EditNotification/<id>',views.EditNotification),
     path('EditNotification_post/',views.EditNotification_post),
     path('DeleteNotification/<id>',views.DeleteNotification),
-    path('AddAttendence/',views.AddAttendence),
+    path('AddAttendence/<id>',views.AddAttendence),
     path('AddAttendence_post/',views.AddAttendence_post),
     path('ViewAttendence/',views.ViewAttendence),
     path('ViewAttendence_post/',views.ViewAttendence_post),
@@ -100,7 +100,7 @@ urlpatterns = [
     path('EditTest/<id>',views.EditTest),
     path('EditTest_post/',views.EditTest_post),
     path('DeleteTest/<id>',views.DeleteTest),
-    path('AddTestResult/',views.AddTestResult),
+    path('AddTestResult/<id>',views.AddTestResult),
     path('AddTestResult_post/',views.AddTestResult_post),
     path('ViewTestResult/',views.ViewTestResult),
     path('ViewTestResult_post/',views.ViewTestResult_post),
@@ -140,5 +140,18 @@ urlpatterns = [
     path('StudentFeedback/',views.StudentFeedback),
     path('StudentFeedback_post/',views.StudentFeedback_post),
     path('StudentLogout/',views.StudentLogout),
+
+#---------------------------public
+    path('ViewPublic/',views.ViewPublic),
+    path('PublicViewTutor/',views.PublicViewTutor),
+    path('PublicViewSubject/',views.PublicViewSubject),
+    path('PublicViewtimetable/',views.PublicViewtimetable),
+
+# ------------------------flutter student
+    path('flutStudentSignup/',views.flutStudentSignup),
+    path('flutStudentLogin/',views.flutStudentLogin),
+    path('viewflutStudentSignup/',views.viewflutStudentSignup),
+    path('ViewFlutStudentProfile/',views.ViewFlutStudentProfile),
+    path('EditProfileFlut/',views.EditProfileFlut),
 
 ]

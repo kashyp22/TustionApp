@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends 'Public/publicHome.html' %}
+{% block body %}
+<body>
+
+
+    <h2>View Tutor</h2>
+    <br>
+    <br>
+    <table  class="table table-bordered">
+        <tr>
+            <th>Sl No</th>
+            <th>Tutor Name</th>
+            <th>Subject</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.Tutor.name }}</td>
+            <td>{{ i.Subject.SubjectName }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+</body>
+{% endblock %}
+</html>

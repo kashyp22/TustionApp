@@ -28,11 +28,11 @@
         <p>previous date</p>
         <p>{{ data.Date }}</p>
         <p>Edit date</p>
-        <input type="date" name="date">
+        <input type="date" name="date" required>
         <p>hour</p>
-        <input type="text" name="hour" value="{{ data.hour }}">
+        <input type="text" name="hour" value="{{ data.hour }}" required>
         <p>present status</p>
-        <input type="text" name="pstatus" value="{{ data.pstatus }}">
+        <input type="text" name="pstatus" value="{{ data.pstatus }}" required>
 
         <input type="submit" value="edit">
     </form>

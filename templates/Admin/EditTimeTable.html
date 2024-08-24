@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% extends 'Admin/AdminIndex.html' %}
+{% block body %}
 <body>
 
 
     <form action="/tushionapp/EditTimeTable_post/" method="post">
     {% csrf_token %}
         <h1>Edit Time Table</h1>
-
+        <br>
+        <br>
         <div>
             <p>Subject</p>
-            <select name="sid">
+            <br>
+            <select name="sid" class="form-control">
                  {% for i in data1 %}
              <option value="{{ i.id }}" {% if i.id == data1.Subject_id %}selected{% endif %}>{{ i.SubjectName }}</option>
             {% endfor %}
-
             </select>
             <input type="hidden" name="tid" value="{{ data.id }}"/>
+            <br>
             <p>hour</p>
-            <input type="text" name="hour" value="{{ data.hour }}"/>
+            <br>
+            <input type="text" name="hour" value="{{ data.hour }}" class="form-control" required/>
+            <br>
             <p>day</p>
-            <input type="text" name="day" value="{{ data.day }}"/>
-
-            <button type="submit">Edit</button>
+            <br>
+            <input type="text" name="day" value="{{ data.day }}" class="form-control" required/>
+            <br>
+            <button type="submit" class="btn btn-primary">Edit</button>
 
         </div>
 
     </form>
 
 </body>
+{% endblock %}
 </html>
